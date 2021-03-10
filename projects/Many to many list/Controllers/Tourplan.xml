@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Tourplan xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Items>
+    <TourplanComponent>
+      <Binding>task</Binding>
+    </TourplanComponent>
+    <TourplanComponent>
+      <Binding>appointment</Binding>
+    </TourplanComponent>
+  </Items>
+</Tourplan>
