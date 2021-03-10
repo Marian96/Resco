@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Empty Offline HTML page</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="initial-scale=1, user-scalable=no" />
+	<script src="JSBridge.js"></script>
+</head>
+<body>
+	<script>
+		MobileCRM.UI.EntityForm.onCommand(
+	"custom_save",
+	function (entityForm) {
+		var entity = entityForm.entity;
+        MobileCRM.UI.EntityForm.save();    
+	},
+	true
+);
+
+	</script>
+</body>
+</html>

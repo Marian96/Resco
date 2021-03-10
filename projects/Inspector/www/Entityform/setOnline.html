@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <script src="../JSBridge.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="online()"> Change mode to online </button>
+
+    </div>
+
+    <script>
+        function online() {
+
+            MobileCRM.Configuration.requestObject(function(Configuration) {
+                Configuration.isOnline = true;
+                return true;
+            }, function(err) {
+                MobileCRM.bridge.alert(err);
+            });
+
+        }
+    </script>
+
+</body>
+
+</html>

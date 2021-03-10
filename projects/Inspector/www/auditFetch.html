@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Empty Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <script src="JSBridge.js"></script>
+</head>
+
+<body>
+    <script>
+
+        window.onload = function(){
+
+            var fetchEntity = new MobileCRM.FetchXml.Entity("resco_audit");
+            fetchEntity.addAttributes();
+
+            var fetch = new MobileCRM.FetchXml.Fetch(fetchEntity);
+
+            fetch.executeAsync(null).then((result) => { // "null" stands for default "DynamicEntities" result format
+                if (result.length < 1) {
+                    MobileCRM.bridge.alert("no audit records");
+                }
+                else {
+                        var entity = result;
+                }
+                MobileCRM.bridge.alert(info);
+            }).catch((err) => {
+                MobileCRM.bridge.alert(err);
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>

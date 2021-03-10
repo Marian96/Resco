@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <script src="JSBridge.js"></script>
+</head>
+
+<body>
+
+    <script>
+        window.onLoad = (function() {
+            var report = new MobileCRM.FetchXml.Entity("resco_mobilereport");
+            report.addAttribute("resco_data");
+            var filter = new MobileCRM.FetchXml.Filter();
+            filter.where("name", "eq", "accountReport");
+            report.filter = filter;
+
+            var fetch = new MobileCRM.FetchXml.Fetch(report);
+            fetch.execute("Array", function(res) {
+                /// <param name='res' type='Array'>Array of results carrying resco_data field value.</param>
+                if (res.length > 0) {
+                    var reportXML = res[0][0];
+
+                    for (var i = 0; i < 2; i++) {
+                        runMobileReport(reportXML)
+                    }
+                }
+            }, function(err) {
+                MobileCRM.bridge.alert("Errore: " + err);
+            }, null);
+
+            // Alternatively, you can run your own custom mobile report definition.
+            // Assumes that 'salesorder' entity have 'totalamount' and 'name' attributes enabled.
+
+
+        })();
+
+        function runMobileReport(reportXML) {
+
+            var fetchXML = `<fetch version="1.0"><entity name="account"/></fetch>`;
+
+            //MobileCRM.Configuration.requestObject(function (config) {
+            //    /// <param name='config' type='MobileCRM.Configuration'/> 
+            var filePath = null; //config.storageDirectory + "/MyCustomReport"+ count +".pdf"; // Create file in storage directory.
+            MobileCRM.MobileReport.runReport(fetchXML, reportXML, "Pdf", null, false, filePath, function(res) {
+                var response = res;
+                readBase64(response);
+            }, function(err) {
+                MobileCRM.bridge.alert("Errore: " + err);
+            }, null);
+        };
+
+        function readBase64(res) {
+            MobileCRM.Application.readFileAsBase64(res, function(data) {
+                var base64 = data;
+                //var target = new MobileCRM.Reference(item.entityName, item.id, item.primaryName);
+                var note = MobileCRM.DynamicEntity.createNew("annotation");
+                note.properties.subject = "TEST";
+                note.properties.filename = "Report.pdf";
+                //note.properties.objectid = target;
+                note.properties.documentbody = base64;
+                note.properties.isdocument = true;
+                note.save(
+                    function(error) {
+                        if (error)
+                            MobileCRM.bridge.alert("An error occurred: " + error);
+                    });
+            }, function(err) {
+                MobileCRM.bridge.alert("Errore: " + err);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

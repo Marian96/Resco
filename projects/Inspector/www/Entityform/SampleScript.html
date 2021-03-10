@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VisitReport</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="../JSBridge.js"></script>
+</head>
+
+<body onload='Init()'>
+</body>
+<script>
+    function Init() {
+        MobileCRM.UI.EntityForm.requestObject(function(entityForm) {
+            if (entityForm.entity.isNew == true) {
+                var maxParticipants = 3;
+                readContacts(maxParticipants, function(contacts) {
+                    MobileCRM.UI.EntityForm.requestObject(function(entityForm) {
+                        var optionalattendees = [];
+                        for (var i = 0; i < contacts.length && i < maxParticipants; i++) {
+                            var participant = new MobileCRM.Reference('contact', contacts[i].id, contacts[i].primaryName);
+                            optionalattendees.push(participant);
+                        }
+                        entityForm.entity.properties['optionalattendees'] = optionalattendees;
+
+                    }, MobileCRM.bridge.alert, null);
+                }, MobileCRM.bridge.alert);
+            }
+        }, MobileCRM.bridge.alert, null);
+    }
+
+    function readContacts(maxCount, onSuccess, onError) {
+        var entity = new MobileCRM.FetchXml.Entity('contact');
+        entity.addAttribute('id');
+        entity.addAttribute('firstname');
+        entity.addAttribute('name');
+        var filter = new MobileCRM.FetchXml.Filter();
+        filter.where("name", "like", "Jo@");
+        entity.filter = filter;
+
+        var fetch = new MobileCRM.FetchXml.Fetch(entity);
+        fetch.count = maxCount;
+        fetch.execute("DynamicEntities",
+            function(result) {
+                onSuccess(result);
+            },
+            onError,
+            null
+        );
+    }
+</script>
+
+</html>

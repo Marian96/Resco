@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <script src="JSBridge.js"></script>
+</head>
+
+<body>
+
+    <script>
+        window.onLoad = (function() {
+            var entity = new MobileCRM.FetchXml.Entity("annotation");
+            entity.addAttributes();
+            var filter = new MobileCRM.FetchXml.Filter();
+            filter.where("id", "eq", "41f034ae-e09d-4b53-a921-6d6ae7569343");
+            entity.filter = filter;
+            var fetch = new MobileCRM.FetchXml.Fetch(entity);
+            fetch.execute("DynamicEntities", // Take the results as an array of arrays with field values
+                function(result) {
+                    if (typeof(result) != "undefined") {
+                        for (var i in result) {
+                            var dynamicEntity = result[0];
+                            var fileName = dynamicEntity.properties.filename;
+                            MobileCRM.DynamicEntity.downloadAttachment("annotation", dynamicEntity.id, function(base64str) {
+                                MobileCRM.Application.writeFileFromBase64(fileName, base64str, function() {
+                                    MobileCRM.Platform.openDocument(fileName, "application/pdf", null, MobileCRM.bridge.alert, null);
+                                }, MobileCRM.bridge.alert);
+                            }, MobileCRM.bridge.alert, null);
+                        }
+                    }
+                },
+                function(err) {
+                    MobileCRM.bridge.alert("Error fetching accounts: " + err);
+                }, null);
+
+            function downloadNoteAttachment(noteId) {
+                MobileCRM.DynamicEntity.downloadAttachment("annotation", noteId, function(base64str) {
+                    /// <param name='base64str' type='String'>parameter contains a string with base64-encoded attachment data.</param>
+                    var imgElement = document.getElementById("img-result");
+                    if (imgElement)
+                        imgElement.setAttribute("src", "data:;base64," + base64str); // set the "src" attribute for out <img> element
+                }, MobileCRM.bridge.alert, null);
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <script src="../JSBridge.js"></script>
+</head>
+
+<body>
+
+
+    <script>
+        MobileCRM.UI.EntityForm.onChange(
+            function(entityForm) {
+                // First check whether the change handler is called due to desired item change
+                var changedItem = entityForm.context.changedItem;
+                if (changedItem == "fruit") {
+                    // Get desired DetailView and its items
+                    var detailView = entityForm.getDetailView("General");
+
+                    // Now get edited entity and set its property to the combination of detail items values
+                    var editedEntity = entityForm.entity;
+                    editedEntity.properties.vegie = "10001";
+                }
+            },
+            true,
+            null
+        );
+    </script>
+
+</body>
+
+</html>

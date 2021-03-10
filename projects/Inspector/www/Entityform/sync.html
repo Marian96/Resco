@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Start html</title>
+    <!-- Activate IE9 document mode, if available. -->
+    <!-- If missing, the WebBrowser control on Windows runs in default IE8 mode which is not supported by JSBridge. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Defined iOS viewport -->
+    <!-- If missing, the UIWebView control on iOS zooms out the web page and allows the pinch zoom. -->
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <script src="../JSBridge.js"></script>
+</head>
+
+<body>
+    <script>
+        function sync() {
+            var flag = false
+            MobileCRM.Application.synchronize(false, null);
+            flag = true
+            MobileCRM.bridge.onGlobalEvent("SyncFinished", function(homeForm) {
+                if (flag) {
+                    MobileCRM.bridge.alert("sync from JS");
+                }
+            }, true);
+        }
+        window.onload = function() {
+            sync()
+        };
+    </script>
+</body>
+
+</html>

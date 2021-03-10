@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+            <meta charset="utf-8" />
+            <title>Empty Offline HTML page</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+            <script src="JSBridge.js"></script>
+</head>
+<body>
+<script>
+function saveEntityForm() {
+            MobileCRM.UI.EntityForm.requestObject(
+                        function (entityForm) {
+                                    /// <param name="entityForm" type="MobileCRM.UI.EntityForm"/>
+                                    if (entityForm)
+                                               MobileCRM.UI.EntityForm.save();
+                        },
+                        function (err) {
+                                    MobileCRM.bridge.alert("An error occurred: " + err);
+                        },
+                        null
+            );
+}
+</script>
+</body>
+</html>

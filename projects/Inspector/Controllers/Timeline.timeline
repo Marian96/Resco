@@ -1,0 +1,12 @@
+﻿<timeline>
+  <entity name="appointment">
+    <regardingField>regardingobjectid</regardingField>
+    <ownerField>ownerid</ownerField>
+    <subjectField>name</subjectField>
+    <descriptionField>description</descriptionField>
+    <sortDateField>scheduledstart</sortDateField>
+    <dueDateField>scheduledend</dueDateField>
+    <statusField>statuscode</statusField>
+    <closedStatuses></closedStatuses>
+  </entity>
+</timeline>
