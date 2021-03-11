@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mobile Report and send email with attachment</title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no'>
+    <script type='text/javascript' src='../JSBridge.js'></script>
+</head>
+
+<body>
+    <button onclick="fetchReportXML()">Fetch and send!</button>
+    <script type="text/javascript">
+        // ======== Create Crash log =========
+        function handleException(data) {
+            MobileCRM.bridge.alert(data);
+            MobileCRM.bridge.log("JSBrdigeLog: " + arguments.callee.name + ". Exception : " + data);
+        }
+        var name = "account_list";
+
+        function fetchReportXML(name = "account_list") {
+            /// <summary> fetch report definition by report id.</summary>
+            /// <param name='repport_id' type='String'/>
+            var report = new MobileCRM.FetchXml.Entity("resco_mobilereport");
+            report.addAttributes();
+
+            if (name) {
+                report.filter = new MobileCRM.FetchXml.filter();
+                report.filer.where("resco_name", "eq", name);
+            }
+
+            var fetch = new MobileCRM.FetchXml.Fetch(report);
+            fetch.execute("DynamicEntities", function(res) {
+                if (res.length > 0) {
+                    var reportXML = res[0].properties.resco_data;
+                    runMobileReport(reportXML);
+                }
+            }, handleException, null);
+        }
+
+        function runMobileReport(reportXML) {
+            /// fetchXML query can be taken from Woodford -> Mobile Reports -> specofoc report -> edit source -> soruce -> export xml.
+            /// You can create fetch dynamically by yourslef, depends on what you want to retrieve.
+            var fetchXML = "<fetch version='1.0' count='10' resultformat='Array' mapping='logical' distinct='true'><entity name='account'><attribute name='accountid' /><attribute name='name' /></entity></fetch>";
+
+            var isExportOnly = true;
+            MobileCRM.MobileReport.runReport(fetchXML, reportXML, null, null, null, null, function(res) {
+                /// <param name='res' type='String'>File path to successfully created report.</param>
+                sendEmail(res);
+            }, handleException, null);
+        }
+
+        function sendEmail(filePath) {
+            /// <summary>Send file via email.</summary>
+            /// <param name='filePath' type='String'>Path to file what will be added as email attachment.</param>
+            var attachments = [];
+            attachments.push(filePath);
+
+            MobileCRM.Platform.emailWithAttachments(
+                "test.test@example.net",
+                "Subject.", "Mobile Report and Email with attachments.",
+                attachments,
+                null, null,
+                handleException, null);
+        }
+    </script>
+</body>
+
+</html>

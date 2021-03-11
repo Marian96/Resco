@@ -1,0 +1,39 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>bookableresourcebooking</EntityName>
+    <CamelCase>bookableresourcebooking</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_actualarrivaltime</string>
+    <string>bookableresourcebookingid</string>
+    <string>name</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_actualarrivaltime">
+          <StyleName>primary</StyleName>
+          <Bounds>157,7,159,33</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="name">
+          <StyleName>primary</StyleName>
+          <Bounds>6,6,134,34</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

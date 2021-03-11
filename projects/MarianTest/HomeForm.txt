@@ -1,0 +1,1 @@
+﻿@Dashboard,task,appointment,@Map,@activity,email,account,contact,lead,opportunity,quote,salesorder,product,annotation,resco_questionnaire;Inspections,@Setup,@About,@@Webpage;file://nieco.html,@@sendemail;file://emailWithAttachemnt.html

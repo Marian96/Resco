@@ -1,0 +1,49 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>quote</EntityName>
+    <CamelCase>quote</CamelCase>
+  </Attributes>
+  <Name>Account Image</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>name</string>
+    <string>quoteid</string>
+    <string>customerid.contact.parentcustomerid</string>
+    <string>customerid.contact.parentcustomerid.account.accountid</string>
+    <string>customerid.contact.parentcustomerid.account.entityimage</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="quote">
+      <link-entity name="contact" alias="L0" from="contactid" to="customerid" link-type="outer">
+        <link-entity name="account" alias="L1" from="accountid" to="parentcustomerid" link-type="outer"/>
+      </link-entity>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>250</Width>
+      <Height>70</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="img">
+          <IsConstant>true</IsConstant>
+          <StyleName>AccountImage</StyleName>
+          <Bounds>0,0,84,70</Bounds>
+          <CellKind>1</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="name">
+          <StyleName>primary</StyleName>
+          <Bounds>86,0,164,69</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>
