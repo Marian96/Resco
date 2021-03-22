@@ -1,0 +1,109 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_workorderincident</EntityName>
+    <CamelCase>msdyn_workorderincident</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <IsDefault>true</IsDefault>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_name</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_agreementbookingincident</string>
+    <string>createdby</string>
+    <string>createdonbehalfby</string>
+    <string>createdon</string>
+    <string>msdyn_customerasset</string>
+    <string>msdyn_description</string>
+    <string>msdyn_estimatedduration</string>
+    <string>importsequencenumber</string>
+    <string>msdyn_incidentresolved</string>
+    <string>msdyn_incidenttype</string>
+    <string>msdyn_internalflags</string>
+    <string>msdyn_ismobile</string>
+    <string>msdyn_isprimary</string>
+    <string>msdyn_itemspopulated</string>
+    <string>modifiedby</string>
+    <string>modifiedonbehalfby</string>
+    <string>modifiedon</string>
+    <string>msdyn_name</string>
+    <string>ownerid</string>
+    <string>owningbusinessunit</string>
+    <string>owningteam</string>
+    <string>owninguser</string>
+    <string>overriddencreatedon</string>
+    <string>msdyn_resourcerequirement</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+    <string>msdyn_taskspercentcompleted</string>
+    <string>timezoneruleversionnumber</string>
+    <string>utcconversiontimezonecode</string>
+    <string>versionnumber</string>
+    <string>msdyn_workorder</string>
+    <string>msdyn_workorderincidentid</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>530</Width>
+      <Height>120</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_incidenttype">
+          <StyleName>primary</StyleName>
+          <Bounds>183,2,345,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_customerasset">
+          <StyleName>primary</StyleName>
+          <Bounds>183,25,300,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_description">
+          <StyleName>Primary Top</StyleName>
+          <Bounds>183,69,300,40</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_estimatedduration">
+          <StyleName>primary</StyleName>
+          <Bounds>183,47,300,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Incident Type:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold Red</StyleName>
+          <Bounds>2,2,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Customer Asset:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,25,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Estimated Duration:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,47,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Description:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,69,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

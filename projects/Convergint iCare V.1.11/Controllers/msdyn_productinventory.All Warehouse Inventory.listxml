@@ -1,0 +1,141 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_productinventory</EntityName>
+    <CamelCase>msdyn_productinventory</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>All Warehouse Inventory</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_warehouse</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_bin</string>
+    <string>msdyn_product</string>
+    <string>msdyn_productinventoryid</string>
+    <string>msdyn_qtyallocated</string>
+    <string>msdyn_qtyavailable</string>
+    <string>msdyn_qtyonhand</string>
+    <string>msdyn_qtyonorder</string>
+    <string>msdyn_reorderpoint</string>
+    <string>msdyn_row</string>
+    <string>msdyn_unit</string>
+    <string>msdyn_warehouse</string>
+    <string>msdyn_product.product.name</string>
+    <string>msdyn_product.product.productnumber</string>
+    <string>msdyn_warehouse.msdyn_warehouse.msdyn_name</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="msdyn_productinventory"/>
+  </Fetch>
+  <Search>
+    <attribute schema="msdyn_name" method="Contains"/>
+    <attribute schema="msdyn_product" method="Contains" reference="true"/>
+    <attribute schema="msdyn_unit" method="Contains" reference="true"/>
+    <attribute schema="msdyn_warehouse" method="Contains" reference="true"/>
+  </Search>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>240</DesignWidth>
+      <DesignHeight>40</DesignHeight>
+      <Name>Default</Name>
+      <Width>313</Width>
+      <Height>162</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="Warehouse:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold Red</StyleName>
+          <Bounds>2,47,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Unit:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,70,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Quantity On Order:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,94,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_warehouse">
+          <StyleName>primary</StyleName>
+          <Bounds>157,47,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_unit">
+          <StyleName>primary</StyleName>
+          <Bounds>157,70,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_qtyonorder">
+          <StyleName>primary</StyleName>
+          <Bounds>157,94,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_product">
+          <StyleName>primary</StyleName>
+          <Bounds>157,2,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_qtyonhand">
+          <StyleName>primary</StyleName>
+          <Bounds>157,139,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_qtyavailable">
+          <StyleName>primary</StyleName>
+          <Bounds>157,117,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Product:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,2,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Quantity On Hand:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,139,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Quantity Available:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,117,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_product.product.productnumber">
+          <StyleName>primary</StyleName>
+          <Bounds>157,24,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Product ID">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,24,153,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

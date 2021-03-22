@@ -1,0 +1,106 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>arm_partsrequest</EntityName>
+    <CamelCase>arm_partsrequest</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>arm_name</OrderBy>
+  <SerializedBindings>
+    <string>arm_shiptocontact</string>
+    <string>arm_authorizer</string>
+    <string>arm_billingaccount</string>
+    <string>arm_businesssegment</string>
+    <string>arm_telephone1</string>
+    <string>createdby</string>
+    <string>createdonbehalfby</string>
+    <string>createdon</string>
+    <string>arm_customernotes</string>
+    <string>arm_customerpurchaseorder</string>
+    <string>arm_customershippingaccount</string>
+    <string>arm_serviceaccount</string>
+    <string>arm_freightterms</string>
+    <string>importsequencenumber</string>
+    <string>modifiedby</string>
+    <string>modifiedonbehalfby</string>
+    <string>modifiedon</string>
+    <string>ownerid</string>
+    <string>owningbusinessunit</string>
+    <string>owningteam</string>
+    <string>owninguser</string>
+    <string>arm_name</string>
+    <string>arm_partsrequestid</string>
+    <string>statuscode</string>
+    <string>arm_quoteid</string>
+    <string>overriddencreatedon</string>
+    <string>arm_region</string>
+    <string>arm_requesteddeliverydate</string>
+    <string>arm_businessunit</string>
+    <string>arm_shipto</string>
+    <string>arm_shiptocity</string>
+    <string>arm_shiptocountry</string>
+    <string>arm_shiptocountrytext</string>
+    <string>arm_shiptostateprovince</string>
+    <string>arm_shiptostateprovincetext</string>
+    <string>arm_shiptostreet1</string>
+    <string>arm_shiptopostalcode</string>
+    <string>arm_shippingmethod</string>
+    <string>statecode</string>
+    <string>timezoneruleversionnumber</string>
+    <string>utcconversiontimezonecode</string>
+    <string>versionnumber</string>
+    <string>arm_workorder</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>440</Width>
+      <Height>85</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="arm_name">
+          <StyleName>primary</StyleName>
+          <Bounds>255,2,179,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="statuscode">
+          <StyleName>primary</StyleName>
+          <Bounds>255,29,179,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_customerpurchaseorder">
+          <StyleName>primary</StyleName>
+          <Bounds>255,56,179,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Parts Request:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,2,250,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Parts Request Status:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,29,250,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Customer Purchase Order:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,56,251,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

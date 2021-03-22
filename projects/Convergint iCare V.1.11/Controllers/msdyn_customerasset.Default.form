@@ -1,0 +1,197 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>msdyn_customerasset</EntityName>
+  <CamelCase>msdyn_customerasset</CamelCase>
+  <WorkflowLoad>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;definition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;type&gt;String&lt;/type&gt;&lt;arg&gt;var:Entity.msdyn_customerassetcategory&lt;/arg&gt;&lt;/definition&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_registrationstatus.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Shared.custom_RegisterDevicesEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Shared.custom_AssociateDeviceEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Shared.custom_SendIoTCommandEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_installworkorder.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_parentasset.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_manufacturer.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_modelnumber.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_ipaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_macaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_gateway.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginname.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginpasscode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_lockoutcode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_firmwareversion.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_dongleid.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_monitoringaccountnumber.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_homerunlocation.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;branch e="true" info="Show/Hide - Firmware" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:Software&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_firmwareversion.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_firmwareversion.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide - Home Run Location" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AccPanel&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:CtrlSvfHdw&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:WrkStat&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PACVoCont&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanNAC&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidRecord&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanFireAl&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_homerunlocation.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_homerunlocation.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide - IP Address, MAC Address, Gateway" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanFireAl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanNAC&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PACVoCont&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:WrkStat&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:CtrlSvfHdw&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AccPanel&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidDedEnc&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_ipaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_macaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_gateway.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_ipaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_macaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_gateway.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide - Lockout Code" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_lockoutcode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_lockoutcode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide Login Name, Login Passcode" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:CtrlSvfHdw&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanNAC&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PACVoCont&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AccPanel&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:WrkStat&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginname.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginpasscode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginname.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginpasscode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide - Monitoring Account Number" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanFireAl&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_monitoringaccountnumber.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_monitoringaccountnumber.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide Dongle ID" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:Software&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_dongleid.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_dongleid.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</WorkflowLoad>
+  <WorkflowItemChanged>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;definition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;type&gt;String&lt;/type&gt;&lt;arg&gt;var:Entity.msdyn_customerassetcategory&lt;/arg&gt;&lt;/definition&gt;&lt;branch e="true" info="Show/Hide Firmware" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:Software&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_firmwareversion.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_firmwareversion.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide Home Run Location" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AccPanel&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:CtrlSvfHdw&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:WrkStat&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PACVoCont&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanNAC&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidRecord&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanFireAl&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_homerunlocation.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_homerunlocation.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide IP Address, MAC Address, Gateway" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanFireAl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanNAC&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PACVoCont&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:WrkStat&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:CtrlSvfHdw&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AccPanel&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidDedEnc&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_ipaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_macaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_gateway.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_ipaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_macaddress.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_gateway.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide Lockout Code" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_lockoutcode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_lockoutcode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide Login Name, Login Passcode" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:CtrlSvfHdw&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanNAC&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PACVoCont&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCam&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamATM&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:VidCamLPR&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AccPanel&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:WrkStat&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginname.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginpasscode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginname.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_loginpasscode.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Show/Hide Monitoring Account Number" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:AlrmPnl&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:PanFireAl&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_monitoringaccountnumber.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_monitoringaccountnumber.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="SHow/Hide Dongle ID" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Assetcategory&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;String:Software&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_dongleid.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:True&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Form.arm_dongleid.IsVisible&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:False&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</WorkflowItemChanged>
+  <WorkflowCommandCanExecute>&lt;?xml version="1.0"?&gt;
+    &lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;
+      &lt;branch e="true" info="Enable or Disable IoT Commands"&gt;
+        &lt;if e="true"&gt;
+          &lt;conditions e="true" op="And"&gt;
+            &lt;condition e="false"&gt;
+              &lt;var&gt;Command.Name&lt;/var&gt;
+              &lt;op&gt;Equal&lt;/op&gt;
+              &lt;arg&gt;String:custom_RegisterDevices&lt;/arg&gt;
+            &lt;/condition&gt;
+          &lt;/conditions&gt;
+          &lt;action&gt;
+            &lt;function e="false"&gt;
+              &lt;var&gt;Command.IsEnabled&lt;/var&gt;
+              &lt;func&gt;Assign&lt;/func&gt;
+              &lt;arg&gt;var:Shared.custom_RegisterDevicesEnabled&lt;/arg&gt;
+            &lt;/function&gt;
+          &lt;/action&gt;
+        &lt;/if&gt;
+        &lt;if e="true"&gt;
+          &lt;conditions e="true" op="And"&gt;
+            &lt;condition e="false"&gt;
+              &lt;var&gt;Command.Name&lt;/var&gt;
+              &lt;op&gt;Equal&lt;/op&gt;
+              &lt;arg&gt;String:custom_AssociateDevice&lt;/arg&gt;
+            &lt;/condition&gt;
+          &lt;/conditions&gt;
+          &lt;action&gt;
+            &lt;function e="false"&gt;
+              &lt;var&gt;Command.IsEnabled&lt;/var&gt;
+              &lt;func&gt;Assign&lt;/func&gt;
+              &lt;arg&gt;var:Shared.custom_AssociateDeviceEnabled&lt;/arg&gt;
+            &lt;/function&gt;
+          &lt;/action&gt;
+        &lt;/if&gt;
+        &lt;if e="true"&gt;
+          &lt;conditions e="true" op="And"&gt;
+            &lt;condition e="false"&gt;
+              &lt;var&gt;Command.Name&lt;/var&gt;
+              &lt;op&gt;Equal&lt;/op&gt;
+              &lt;arg&gt;String:custom_SendIoTCommand&lt;/arg&gt;
+            &lt;/condition&gt;
+          &lt;/conditions&gt;
+          &lt;action&gt;
+            &lt;function e="false"&gt;
+              &lt;var&gt;Command.IsEnabled&lt;/var&gt;
+              &lt;func&gt;Assign&lt;/func&gt;
+              &lt;arg&gt;var:Shared.custom_SendIoTCommandEnabled&lt;/arg&gt;
+            &lt;/function&gt;
+          &lt;/action&gt;
+        &lt;/if&gt;
+      &lt;/branch&gt;
+      &lt;branch e="true" info="Disable IoT Commands when entity is new"&gt;
+        &lt;if e="true"&gt;
+          &lt;conditions e="true" op="And"&gt;
+            &lt;condition e="false"&gt;
+              &lt;var&gt;Entity.IsNew&lt;/var&gt;
+              &lt;op&gt;Equal&lt;/op&gt;
+              &lt;arg&gt;Boolean:True&lt;/arg&gt;
+            &lt;/condition&gt;
+          &lt;/conditions&gt;
+          &lt;action&gt;
+            &lt;branch e="true" info=""&gt;
+              &lt;if e="true"&gt;
+                &lt;conditions e="true" op="Or"&gt;
+                  &lt;condition e="false"&gt;
+                    &lt;var&gt;Command.Name&lt;/var&gt;
+                    &lt;op&gt;Equal&lt;/op&gt;
+                    &lt;arg&gt;String:custom_RegisterDevices&lt;/arg&gt;
+                  &lt;/condition&gt;
+                  &lt;condition e="false"&gt;
+                    &lt;var&gt;Command.Name&lt;/var&gt;
+                    &lt;op&gt;Equal&lt;/op&gt;
+                    &lt;arg&gt;String:custom_SendIoTCommand&lt;/arg&gt;
+                  &lt;/condition&gt;
+                  &lt;condition e="false"&gt;
+                    &lt;var&gt;Command.Name&lt;/var&gt;
+                    &lt;op&gt;Equal&lt;/op&gt;
+                    &lt;arg&gt;String:custom_AssociateDevice&lt;/arg&gt;
+                  &lt;/condition&gt;
+                &lt;/conditions&gt;
+                &lt;action&gt;
+                  &lt;function e="false"&gt;
+                    &lt;var&gt;Command.IsEnabled&lt;/var&gt;
+                    &lt;func&gt;Assign&lt;/func&gt;
+                    &lt;arg&gt;Boolean:False&lt;/arg&gt;
+                  &lt;/function&gt;
+                &lt;/action&gt;
+              &lt;/if&gt;
+            &lt;/branch&gt;
+          &lt;/action&gt;
+        &lt;/if&gt;
+      &lt;/branch&gt;
+    &lt;/Workflow&gt;
+  </WorkflowCommandCanExecute>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;SharedVariable usage="OnLoadEnabled"&gt;&lt;Name&gt;custom_RegisterDevicesEnabled&lt;/Name&gt;&lt;CrmType&gt;Boolean&lt;/CrmType&gt;&lt;/SharedVariable&gt;&lt;SharedVariable usage="OnLoadEnabled"&gt;&lt;Name&gt;custom_AssociateDeviceEnabled&lt;/Name&gt;&lt;CrmType&gt;Boolean&lt;/CrmType&gt;&lt;/SharedVariable&gt;&lt;SharedVariable usage="OnLoadEnabled"&gt;&lt;Name&gt;custom_SendIoTCommandEnabled&lt;/Name&gt;&lt;CrmType&gt;Boolean&lt;/CrmType&gt;&lt;/SharedVariable&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <PrimaryCommands>custom_AssociateDevice|Cmd.AssociateDevice||custom_RegisterDevices|Cmd.RegisterDevices||custom_SendIoTCommand|Cmd.SendIoTCommand|</PrimaryCommands>
+  <SharedVariableNames>
+    <string>custom_RegisterDevicesEnabled</string>
+    <string>custom_AssociateDeviceEnabled</string>
+    <string>custom_SendIoTCommandEnabled</string>
+  </SharedVariableNames>
+  <ClassBinding/>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Customer Asset</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_name"/>
+        <DetailItem SchemaName="msdyn_customerassetcategory"/>
+        <DetailItem SchemaName="arm_installworkorder">
+          <LookupViews>&lt;lookup&gt;&lt;extra&gt;&lt;views&gt;msdyn_workorder.@Default&lt;/views&gt;&lt;/extra&gt;&lt;extra&gt;&lt;views&gt;msdyn_workorder.@Default&lt;/views&gt;&lt;filter entity="msdyn_workorder"&gt;&amp;lt;fetch version="1.0"&amp;gt;&amp;lt;entity name="msdyn_workorder"&amp;gt;&amp;lt;link-entity name="account" alias="L0" from="accountid" to="msdyn_serviceaccount" link-type="inner"&amp;gt;&amp;lt;filter type="and"&amp;gt;&amp;lt;condition attribute="accountid" operator="eq" value="{{msdyn_account}}"/&amp;gt;&amp;lt;/filter&amp;gt;&amp;lt;/link-entity&amp;gt;&amp;lt;/entity&amp;gt;&amp;lt;/fetch&amp;gt;&lt;/filter&gt;&lt;/extra&gt;&lt;/lookup&gt;</LookupViews>
+        </DetailItem>
+        <DetailItem SchemaName="arm_installdate"/>
+        <DetailItem SchemaName="arm_deprecateddate"/>
+        <DetailItem SchemaName="msdyn_account">
+          <LookupViews>&lt;lookup&gt;&lt;extra/&gt;&lt;extra&gt;&lt;views&gt;account.@WO Account&lt;/views&gt;&lt;/extra&gt;&lt;/lookup&gt;</LookupViews>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_parentasset">
+          <LookupViews>&lt;lookup&gt;&lt;extra&gt;&lt;views&gt;msdyn_customerasset.@All Customer Assets&lt;/views&gt;&lt;/extra&gt;&lt;extra&gt;&lt;views&gt;msdyn_customerasset.@All Customer Assets&lt;/views&gt;&lt;filter entity="msdyn_customerasset"&gt;&amp;lt;fetch version="1.0"&amp;gt;&amp;lt;entity name="msdyn_customerasset"&amp;gt;&amp;lt;filter type="and"&amp;gt;&amp;lt;condition attribute="msdyn_account" operator="eq" value="{{msdyn_account}}"/&amp;gt;&amp;lt;/filter&amp;gt;&amp;lt;/entity&amp;gt;&amp;lt;/fetch&amp;gt;&lt;/filter&gt;&lt;/extra&gt;&lt;/lookup&gt;</LookupViews>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_masterasset"/>
+        <DetailItem SchemaName="msdyn_product"/>
+        <DetailItem SchemaName="ownerid"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="arm_manufacturer"/>
+        <DetailItem SchemaName="arm_modelnumber"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="Manufacturer Warranty" separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="arm_manufacturerwarrantystartdate"/>
+        <DetailItem SchemaName="arm_manufacturerwarrantyenddate"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="Convergint Warranty" separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="arm_warrantystartdate"/>
+        <DetailItem SchemaName="arm_warrantyenddate"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="arm_serialnumber"/>
+        <DetailItem SchemaName="arm_expectedreplacementdate"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" flexiCollapsed="1" NameModified="1" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Asset Properties</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="arm_location" Style="Multiline Left"/>
+        <DetailItem SchemaName="arm_assetcondition"/>
+        <DetailItem SchemaName="arm_ipaddress"/>
+        <DetailItem SchemaName="arm_macaddress"/>
+        <DetailItem SchemaName="arm_gateway"/>
+        <DetailItem SchemaName="arm_loginname"/>
+        <DetailItem SchemaName="arm_loginpasscode"/>
+        <DetailItem SchemaName="arm_lockoutcode"/>
+        <DetailItem SchemaName="arm_firmwareversion"/>
+        <DetailItem SchemaName="arm_dongleid"/>
+        <DetailItem SchemaName="arm_monitoringaccountnumber"/>
+        <DetailItem SchemaName="arm_installedby"/>
+        <DetailItem SchemaName="arm_homerunlocation" Style="Multiline Left"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Customer Asset Properties List</Name>
+      <Binding SchemaName="arm_customerassetproperties.arm_customerassetid"/>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Connected Device Attributes</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_deviceid"/>
+        <DetailItem SchemaName="msdyn_registrationstatus"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" flexiWidth="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Activity List</Name>
+      <Binding SchemaName="activity.regardingobjectid"/>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" flexiWidth="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Notes List</Name>
+      <Binding SchemaName="annotation.objectid"/>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

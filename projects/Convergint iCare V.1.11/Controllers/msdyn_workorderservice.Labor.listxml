@@ -1,0 +1,211 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_workorderservice</EntityName>
+    <CamelCase>msdyn_workorderservice</CamelCase>
+  </Attributes>
+  <Name>Labor</Name>
+  <Kind>List</Kind>
+  <IsDefault>true</IsDefault>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_lineorder</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_additionalcost</string>
+    <string>msdyn_additionalcost_base</string>
+    <string>msdyn_agreementbookingservice</string>
+    <string>msdyn_booking</string>
+    <string>msdyn_calculatedunitamount</string>
+    <string>msdyn_calculatedunitamount_base</string>
+    <string>msdyn_commissioncosts</string>
+    <string>msdyn_commissioncosts_base</string>
+    <string>createdby</string>
+    <string>createdonbehalfby</string>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>msdyn_customerasset</string>
+    <string>msdyn_description</string>
+    <string>msdyn_disableentitlement</string>
+    <string>msdyn_discountpercent</string>
+    <string>msdyn_discountamount</string>
+    <string>msdyn_discountamount_base</string>
+    <string>msdyn_duration</string>
+    <string>msdynce_durationinhours</string>
+    <string>msdyn_durationtobill</string>
+    <string>msdyn_entitlement</string>
+    <string>msdyn_estimatecalculatedunitamount</string>
+    <string>msdyn_estimatecalculatedunitamount_base</string>
+    <string>msdyn_estimatediscountpercent</string>
+    <string>msdyn_estimatediscountamount</string>
+    <string>msdyn_estimatediscountamount_base</string>
+    <string>msdyn_estimateduration</string>
+    <string>msdyn_estimatesubtotal</string>
+    <string>msdyn_estimatesubtotal_base</string>
+    <string>msdyn_estimatetotalamount</string>
+    <string>msdyn_estimatetotalamount_base</string>
+    <string>msdyn_estimatetotalcost</string>
+    <string>msdyn_estimatetotalcost_base</string>
+    <string>msdyn_estimateunitamount</string>
+    <string>msdyn_estimateunitamount_base</string>
+    <string>msdyn_estimateunitcost</string>
+    <string>msdyn_estimateunitcost_base</string>
+    <string>msdynce_estimateddurationinhours</string>
+    <string>exchangerate</string>
+    <string>msdynce_externallineorder</string>
+    <string>msdynce_headersystemstatus</string>
+    <string>importsequencenumber</string>
+    <string>msdyn_internaldescription</string>
+    <string>msdyn_internalflags</string>
+    <string>msdynce_invoiceddiscountamount</string>
+    <string>msdynce_invoiceddiscountamount_base</string>
+    <string>msdynce_invoicedunitamount</string>
+    <string>msdynce_invoicedunitamount_base</string>
+    <string>msdyn_lineorder</string>
+    <string>msdyn_linestatus</string>
+    <string>msdyn_minimumchargeamount</string>
+    <string>msdyn_minimumchargeamount_base</string>
+    <string>msdyn_minimumchargeduration</string>
+    <string>modifiedby</string>
+    <string>modifiedonbehalfby</string>
+    <string>modifiedon</string>
+    <string>msdyn_name</string>
+    <string>msdynce_orderhasexternalmaintainedproductsonly</string>
+    <string>ownerid</string>
+    <string>owningbusinessunit</string>
+    <string>owningteam</string>
+    <string>owninguser</string>
+    <string>msdyn_pricelist</string>
+    <string>arm_problem</string>
+    <string>overriddencreatedon</string>
+    <string>arm_resolutionnotes</string>
+    <string>msdyn_service</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+    <string>msdyn_subtotal</string>
+    <string>msdyn_subtotal_base</string>
+    <string>msdyn_taxable</string>
+    <string>timezoneruleversionnumber</string>
+    <string>msdyn_totalamount</string>
+    <string>msdyn_totalamount_base</string>
+    <string>msdyn_totalcost</string>
+    <string>msdyn_totalcost_base</string>
+    <string>msdyn_unit</string>
+    <string>msdyn_unitamount</string>
+    <string>msdyn_unitamount_base</string>
+    <string>msdyn_unitcost</string>
+    <string>msdyn_unitcost_base</string>
+    <string>utcconversiontimezonecode</string>
+    <string>versionnumber</string>
+    <string>msdyn_workorder</string>
+    <string>msdyn_workorderincident</string>
+    <string>msdyn_workorderserviceid</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>550</Width>
+      <Height>100</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_lineorder">
+          <StyleName>primary</StyleName>
+          <Bounds>114,2,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_linestatus">
+          <StyleName>primary</StyleName>
+          <Bounds>116,26,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_service">
+          <StyleName>primary</StyleName>
+          <Bounds>370,2,170,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_resolutionnotes">
+          <StyleName>primary</StyleName>
+          <Bounds>370,50,170,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_customerasset">
+          <StyleName>primary</StyleName>
+          <Bounds>370,26,170,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_duration">
+          <StyleName>primary</StyleName>
+          <Bounds>114,74,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Line Order:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold Red</StyleName>
+          <Bounds>2,2,110,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Labor:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>217,2,150,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Customer Asset:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>217,26,150,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Problem:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2076,70,150,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Internal Notes:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>217,50,150,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Line Status:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,26,110,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Duration:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,74,110,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder">
+          <StyleName>primary</StyleName>
+          <Bounds>116,50,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Work Order:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>3,50,110,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

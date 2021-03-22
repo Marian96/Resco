@@ -1,0 +1,7 @@
+﻿Manufacturer=Microsoft Corporation
+ProductTitle=Convergint Technologies - BAT
+ProductSubTitle=Convergint iCare 2.0
+PoweredBy=Powered by Resco
+Icon=Logo.Logo.png
+Website=https://www.convergint.com/
+SupportEmail=mobile.support@convergint.com

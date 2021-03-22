@@ -1,0 +1,117 @@
+﻿<EntityList UseSyncFilter="true">
+  <Attributes>
+    <EntityName>bookableresourcebooking</EntityName>
+    <CamelCase>bookableresourcebooking</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>All Work Order Bookings Not Completed</Name>
+  <Kind>List</Kind>
+  <IsDefault>true</IsDefault>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>starttime</OrderBy>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;SharedVariable usage="None"&gt;&lt;Name&gt;WO&lt;/Name&gt;&lt;CrmType&gt;Entity&lt;/CrmType&gt;&lt;InnerType&gt;msdyn_workorder&lt;/InnerType&gt;&lt;/SharedVariable&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <SerializedBindings>
+    <string>bookableresourcebookingid</string>
+    <string>name</string>
+    <string>bookingstatus</string>
+    <string>endtime</string>
+    <string>resource</string>
+    <string>starttime</string>
+    <string>msdyn_workorder</string>
+    <string>bookingstatus.bookingstatus.msdyn_fieldservicestatus</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_city</string>
+    <string>msdyn_workorder.msdyn_workorder.msdynce_externalproject</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_primaryincidenttype</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_postalcode</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_priority</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_serviceaccount</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_stateorprovince</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_address1</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_name</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_workordertype</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_serviceaccount.account.address1_composite</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_serviceaccount.account.address1_line1</string>
+  </SerializedBindings>
+  <CalendarFields>starttime;endtime</CalendarFields>
+  <MaxColumns>0</MaxColumns>
+  <TemplateSelectorRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;definition e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Clear&lt;/func&gt;&lt;type&gt;String&lt;/type&gt;&lt;/definition&gt;&lt;branch e="false" info="Set booking status dot color" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970000&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Scheduled&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970001&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Traveling&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970003&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:InProgress&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970004&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Completed&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970002&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:OnBreak&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970005&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Canceled&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Hide address icon when no address" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_address1)&lt;/var&gt;&lt;op&gt;DoesNotContainData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.MapPin.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Hidden&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Hide booking status when no status" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.bookingstatus&lt;/var&gt;&lt;op&gt;DoesNotContainData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Hidden&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Set up variable for Service " &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_serviceaccount)&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;group e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_workordertype)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Lookup:msdyn_workordertype,93263ef6-331c-ea11-a811-000d3a3477a0,Service - Contract&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_workordertype)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Lookup:msdyn_workordertype,e0105002-341c-ea11-a811-000d3a3477a0,Service - Time &amp;amp; Material&lt;/arg&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_workordertype)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Lookup:msdyn_workordertype,218ee012-734c-ea11-a812-000d3a3479c5,Service - Warranty&lt;/arg&gt;&lt;/condition&gt;&lt;/group&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_serviceaccount)&lt;/arg&gt;&lt;arg&gt;String:\n&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_name)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:\n&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_serviceaccount.account.address1_line1)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:\n&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_city)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:, &lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_stateorprovince)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:, &lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_postalcode)&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;var:Entity.name&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_serviceaccount)&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_workordertype)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Lookup:msdyn_workordertype,f2c56302-d268-ea11-a811-000d3a3477a0,Install&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_serviceaccount)&lt;/arg&gt;&lt;arg&gt;String:\n&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_name)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:\n&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdynce_externalproject)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:\n&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_serviceaccount.account.address1_line1)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:\n&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_city)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:, &lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_stateorprovince)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;String:, &lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;var1&lt;/var&gt;&lt;func&gt;Concat&lt;/func&gt;&lt;arg&gt;var:var1&lt;/arg&gt;&lt;arg&gt;var:Entity.(msdyn_workorder.msdyn_workorder.msdyn_postalcode)&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Row.(msdyn_workorder.msdyn_workorder.msdyn_priority).Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Hidden&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</TemplateSelectorRule>
+  <Fetch version="1.0">
+    <entity name="bookableresourcebooking">
+      <filter type="and">
+        <condition attribute="bookingstatus" operator="ne" value="4f15f744-4a95-ea11-a811-000d3a3477a0" uitype="bookingstatus" uiname="Work Complete"/>
+      </filter>
+      <link-entity name="bookableresource" alias="L0" from="bookableresourceid" to="resource" link-type="inner">
+        <filter type="and">
+          <filter type="and">
+            <condition attribute="userid" operator="eq-userid"/>
+            <condition attribute="statecode" operator="eq" value="0"/>
+          </filter>
+        </filter>
+      </link-entity>
+    </entity>
+  </Fetch>
+  <Search>
+    <attribute schema="name" method="Contains"/>
+    <attribute schema="resource" method="Contains" reference="true"/>
+    <attribute schema="msdyn_workorder" method="Contains" reference="true"/>
+  </Search>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>400</Width>
+      <Height>103</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="bookingstatus">
+          <StyleName>gray</StyleName>
+          <Bounds>19,54,300,16</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="StatusDot">
+          <IsConstant>true</IsConstant>
+          <StyleName>StatusDot</StyleName>
+          <Bounds>0,39,19,19</Bounds>
+          <CellKind>1</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="MapPin">
+          <IsConstant>true</IsConstant>
+          <StyleName>MapPin</StyleName>
+          <Bounds>193,45,19,16</Bounds>
+          <CellKind>1</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="starttime">
+          <StyleName>DateTime</StyleName>
+          <Bounds>19,33,300,22</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_priority">
+          <StyleName>large10bold</StyleName>
+          <Bounds>19,12,175,21</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_primaryincidenttype">
+          <StyleName>gray</StyleName>
+          <Bounds>19,70,173,16</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="var1">
+          <StyleName>primary</StyleName>
+          <Bounds>211,0,239,103</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties>
+    <SerializedClassBinding name="var1" label="var1" type="String"/>
+  </CustomProperties>
+</EntityList>

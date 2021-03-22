@@ -1,0 +1,44 @@
+﻿<EntityForm version="2" flexi="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" fleximode="1" fullscreen="0" resize="0">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>msdyn_project</EntityName>
+  <CamelCase>msdyn_project</CamelCase>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand OnExecuteButton</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_subject"/>
+        <DetailItem SchemaName="msdyn_description"/>
+        <DetailItem SchemaName="msdyn_customer"/>
+        <DetailItem SchemaName="msdyn_calendarid"/>
+        <DetailItem SchemaName="msdyn_contractorganizationalunitid"/>
+        <DetailItem SchemaName="msdyn_projectmanager"/>
+        <DetailItem SchemaName="msdyn_projecttemplate"/>
+        <DetailItem SchemaName="statecode"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" flexi="1">
+      <Name>Estimates</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_scheduledstart"/>
+        <DetailItem SchemaName="msdyn_scheduledend"/>
+        <DetailItem SchemaName="msdyn_plannedhours"/>
+        <DetailItem SchemaName="msdyn_plannedlaborcost"/>
+        <DetailItem SchemaName="msdyn_plannedexpensecost"/>
+        <DetailItem SchemaName="msdyn_totalplannedcost"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" flexi="1">
+      <Name>Actuals</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_actualstart"/>
+        <DetailItem SchemaName="msdyn_actualend"/>
+        <DetailItem SchemaName="msdyn_actualhours"/>
+        <DetailItem SchemaName="msdyn_actuallaborcost"/>
+        <DetailItem SchemaName="msdyn_actualexpensecost"/>
+        <DetailItem SchemaName="msdyn_totalactualcost"/>
+      </SerializedChildren>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

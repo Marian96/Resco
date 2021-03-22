@@ -1,0 +1,57 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>arm_customerassetproperties</EntityName>
+    <CamelCase>arm_customerassetproperties</CamelCase>
+  </Attributes>
+  <Name>Customer Asset Properties</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>arm_name</OrderBy>
+  <SerializedBindings>
+    <string>createdon</string>
+    <string>arm_customerassetpropertiesid</string>
+    <string>arm_customerassetpropertytype</string>
+    <string>arm_customerassetpropertyvalue</string>
+    <string>modifiedon</string>
+    <string>arm_name</string>
+    <string>ownerid</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>550</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="arm_name">
+          <StyleName>primary</StyleName>
+          <Bounds>5,2,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_customerassetpropertytype">
+          <StyleName>primary</StyleName>
+          <Bounds>106,2,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_customerassetpropertyvalue">
+          <StyleName>primary</StyleName>
+          <Bounds>207,2,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="statecode">
+          <StyleName>primary</StyleName>
+          <Bounds>309,2,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

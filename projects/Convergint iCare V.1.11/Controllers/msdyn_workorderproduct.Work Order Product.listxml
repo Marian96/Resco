@@ -1,0 +1,46 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_workorderproduct</EntityName>
+    <CamelCase>msdyn_workorderproduct</CamelCase>
+  </Attributes>
+  <Name>Work Order Product</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_name</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_name</string>
+    <string>msdyn_workorderproductid</string>
+    <string>msdyn_product.product.productnumber</string>
+    <string>msdyn_product.product.producttypecode</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>304</Width>
+      <Height>70</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_name">
+          <StyleName>primary</StyleName>
+          <Bounds>2,2,300,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_product.product.productnumber">
+          <StyleName>primary</StyleName>
+          <Bounds>2,23,300,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_product.product.producttypecode">
+          <StyleName>primary</StyleName>
+          <Bounds>2,44,300,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

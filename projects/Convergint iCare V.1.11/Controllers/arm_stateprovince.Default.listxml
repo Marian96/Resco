@@ -1,0 +1,46 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>arm_stateprovince</EntityName>
+    <CamelCase>arm_stateprovince</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>arm_name</OrderBy>
+  <SerializedBindings>
+    <string>arm_longname</string>
+    <string>arm_name</string>
+    <string>arm_stateprovinceid</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="arm_stateprovince">
+      <filter type="and">
+        <condition attribute="arm_country" operator="eq" value="1facdd27-8b67-ea11-a811-000d3a347136" uitype="arm_country" uiname="USA"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="arm_name">
+          <StyleName>primary</StyleName>
+          <Bounds>10,2,302,28</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_longname">
+          <StyleName>gray</StyleName>
+          <Bounds>10,20,302,28</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

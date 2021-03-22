@@ -1,0 +1,199 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_workorder</EntityName>
+    <CamelCase>msdyn_workorder</CamelCase>
+  </Attributes>
+  <Name>Customer Asset - Work Orders</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_name</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_addressname</string>
+    <string>msdyn_autonumbering</string>
+    <string>msdyn_bookingsummary</string>
+    <string>msdyn_servicerequest</string>
+    <string>msdyn_childindex</string>
+    <string>msdyn_city</string>
+    <string>msdyn_closedby</string>
+    <string>msdyn_timeclosed</string>
+    <string>msdyn_country</string>
+    <string>createdby</string>
+    <string>createdonbehalfby</string>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>arm_customerreferencenumber</string>
+    <string>msdyn_datewindowend</string>
+    <string>msdyn_datewindowstart</string>
+    <string>msdyn_estimatesubtotalamount</string>
+    <string>msdyn_estimatesubtotalamount_base</string>
+    <string>exchangerate</string>
+    <string>msdynce_externalproject</string>
+    <string>msdyn_timegroup</string>
+    <string>msdynce_hasexternallymaintainedproductsonly</string>
+    <string>importsequencenumber</string>
+    <string>msdyn_primaryincidenttype</string>
+    <string>msdyn_instructions</string>
+    <string>msdyn_internalflags</string>
+    <string>msdyn_iotalert</string>
+    <string>msdyn_ismobile</string>
+    <string>lastonholdtime</string>
+    <string>slainvokedid</string>
+    <string>msdyn_latitude</string>
+    <string>msdyn_longitude</string>
+    <string>modifiedby</string>
+    <string>modifiedonbehalfby</string>
+    <string>modifiedon</string>
+    <string>onholdtime</string>
+    <string>msdyn_opportunityid</string>
+    <string>ownerid</string>
+    <string>owningbusinessunit</string>
+    <string>owningteam</string>
+    <string>owninguser</string>
+    <string>msdyn_parentworkorder</string>
+    <string>msdyn_postalcode</string>
+    <string>msdyn_preferredresource</string>
+    <string>msdyn_pricelist</string>
+    <string>msdyn_customerasset</string>
+    <string>msdyn_primaryincidentdescription</string>
+    <string>msdyn_primaryincidentestimatedduration</string>
+    <string>msdyn_priority</string>
+    <string>processid</string>
+    <string>overriddencreatedon</string>
+    <string>msdyn_serviceterritory</string>
+    <string>arm_resolutionnotes</string>
+    <string>msdyn_taxcode</string>
+    <string>msdyn_serviceaccount</string>
+    <string>msdyn_reportedbycontact</string>
+    <string>arm_businessunit</string>
+    <string>slaid</string>
+    <string>stageid</string>
+    <string>msdyn_stateorprovince</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+    <string>msdyn_address1</string>
+    <string>msdyn_address2</string>
+    <string>msdyn_address3</string>
+    <string>msdyn_substatus</string>
+    <string>msdyn_subtotalamount</string>
+    <string>msdyn_subtotalamount_base</string>
+    <string>msdyn_supportcontact</string>
+    <string>msdyn_systemstatus</string>
+    <string>msdyn_taxable</string>
+    <string>msdyn_mapcontrol</string>
+    <string>msdyn_timegroupdetailselected</string>
+    <string>msdyn_timewindowend</string>
+    <string>msdyn_timewindowstart</string>
+    <string>timezoneruleversionnumber</string>
+    <string>msdyn_totalamount</string>
+    <string>msdyn_totalamount_base</string>
+    <string>msdyn_totalsalestax</string>
+    <string>msdyn_totalsalestax_base</string>
+    <string>traversedpath</string>
+    <string>utcconversiontimezonecode</string>
+    <string>versionnumber</string>
+    <string>msdyn_workorderid</string>
+    <string>msdyn_workhourtemplate</string>
+    <string>msdyn_worklocation</string>
+    <string>msdyn_workorderarrivaltimekpiid</string>
+    <string>msdyn_workordersummary</string>
+    <string>msdyn_name</string>
+    <string>msdyn_workorderresolutionkpiid</string>
+    <string>msdynce_workorderstatushaschanged</string>
+    <string>msdyn_workordertype</string>
+    <string>msdyn_preferredresource.bookableresource.name</string>
+    <string>msdyn_supportcontact.bookableresource.bookableresourceid</string>
+    <string>msdyn_supportcontact.bookableresource.name</string>
+  </SerializedBindings>
+  <HasGpsFields>true</HasGpsFields>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="msdyn_workorder">
+      <link-entity name="msdyn_customerasset" alias="L0" from="arm_installworkorder" to="msdyn_workorderid" link-type="inner"/>
+    </entity>
+  </Fetch>
+  <Search>
+    <attribute schema="msdyn_name" method="BeginsWith"/>
+  </Search>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>500</Width>
+      <Height>121</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_name">
+          <StyleName>primary</StyleName>
+          <Bounds>200,2,250,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_systemstatus">
+          <StyleName>primary</StyleName>
+          <Bounds>200,50,250,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_serviceaccount">
+          <StyleName>primary</StyleName>
+          <Bounds>200,26,250,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Work Order:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold Red</StyleName>
+          <Bounds>2,2,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Status:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>3,50,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Service Account:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,26,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workordertype">
+          <StyleName>primary</StyleName>
+          <Bounds>200,74,250,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_primaryincidenttype">
+          <StyleName>primary</StyleName>
+          <Bounds>200,12097,250,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Incident Type:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>3,97,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Work Order Type:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,74,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_primaryincidenttype">
+          <StyleName>primary</StyleName>
+          <Bounds>200,97,250,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

@@ -1,0 +1,89 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>account</EntityName>
+  <CamelCase>Account</CamelCase>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand OnExecuteButton</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="name"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Site Contact</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="primarycontactid">
+          <LookupViews>&lt;lookup&gt;&lt;extra/&gt;&lt;extra&gt;&lt;views&gt;contact.Default -Contact&lt;/views&gt;&lt;/extra&gt;&lt;/lookup&gt;</LookupViews>
+        </DetailItem>
+        <DetailItem SchemaName="address1_primarycontactname"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="telephone1"/>
+        <DetailItem SchemaName="telephone3"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="emailaddress1"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Site Address</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="address1_line1"/>
+        <DetailItem SchemaName="address1_line2"/>
+        <DetailItem SchemaName="address1_line3"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="address1_city"/>
+        <DetailItem SchemaName="address1_postalcode"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="address1_stateorprovince"/>
+        <DetailItem SchemaName="address1_country"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Hours of Operation</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="arm_daysofoperation"/>
+        <DetailItem SchemaName="arm_opens"/>
+        <DetailItem SchemaName="arm_closes"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="MapTab" flexi="0" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Map</Name>
+      <CoordinatesBinding>address2_latitude;address2_longitude</CoordinatesBinding>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" flexiWidth="1" flexiOrientation="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Customer Assets List</Name>
+      <Binding SchemaName="msdyn_customerasset.msdyn_account"/>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" flexi="1" flexiWidth="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Work Order Instructions</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_workorderinstructions"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" flexiWidth="1" flexiOrientation="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0" DocCommands="0">
+      <Name>Work Orders List</Name>
+      <Binding SchemaName="msdyn_workorder.msdyn_serviceaccount"/>
+      <Views>msdyn_workorder.Open Work Orders by Created Date</Views>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" flexiWidth="1" flexiOrientation="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Notes List</Name>
+      <Binding SchemaName="annotation.objectid"/>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" flexiWidth="1" flexiOrientation="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Connections List</Name>
+      <Binding SchemaName="connection.record1id"/>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

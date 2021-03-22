@@ -1,0 +1,100 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_rma</EntityName>
+    <CamelCase>msdyn_rma</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_name</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_billingaccount</string>
+    <string>createdon</string>
+    <string>msdyn_daterequested</string>
+    <string>msdyn_description</string>
+    <string>modifiedon</string>
+    <string>ownerid</string>
+    <string>msdyn_packagingtrackingno</string>
+    <string>msdyn_rmaid</string>
+    <string>msdyn_name</string>
+    <string>msdyn_serviceaccount</string>
+    <string>msdyn_shipvia</string>
+    <string>msdyn_shippingtrackingno</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+    <string>msdyn_substatus</string>
+    <string>msdyn_systemstatus</string>
+    <string>msdyn_workorder</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="msdyn_rma">
+      <filter type="and">
+        <condition attribute="ownerid" operator="eq-userid"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>550</Width>
+      <Height>98</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_name">
+          <StyleName>primary</StyleName>
+          <Bounds>200,26,320,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder">
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>200,2,320,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Work Order Number:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold Red</StyleName>
+          <Bounds>2,2,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="RMA Number:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,26,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Service Account:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,50,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="System Status:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,74,195,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>7</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_systemstatus">
+          <StyleName>primary</StyleName>
+          <Bounds>200,74,320,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_serviceaccount">
+          <StyleName>primary</StyleName>
+          <Bounds>200,50,320,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

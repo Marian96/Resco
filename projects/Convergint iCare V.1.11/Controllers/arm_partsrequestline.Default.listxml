@@ -1,0 +1,74 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>arm_partsrequestline</EntityName>
+    <CamelCase>arm_partsrequestline</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>arm_name</OrderBy>
+  <SerializedBindings>
+    <string>createdby</string>
+    <string>createdonbehalfby</string>
+    <string>createdon</string>
+    <string>importsequencenumber</string>
+    <string>statuscode</string>
+    <string>modifiedby</string>
+    <string>modifiedonbehalfby</string>
+    <string>modifiedon</string>
+    <string>ownerid</string>
+    <string>owningbusinessunit</string>
+    <string>owningteam</string>
+    <string>owninguser</string>
+    <string>arm_partdescription</string>
+    <string>arm_name</string>
+    <string>arm_partsrequest</string>
+    <string>arm_partsrequestlineid</string>
+    <string>arm_product</string>
+    <string>arm_quantity</string>
+    <string>overriddencreatedon</string>
+    <string>arm_requesteddeliverydate</string>
+    <string>arm_shippingdate</string>
+    <string>statecode</string>
+    <string>timezoneruleversionnumber</string>
+    <string>arm_trackingnumber</string>
+    <string>utcconversiontimezonecode</string>
+    <string>versionnumber</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>550</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="arm_name">
+          <StyleName>primary</StyleName>
+          <Bounds>2,2,185,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_partsrequest">
+          <StyleName>primary</StyleName>
+          <Bounds>190,2,185,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_product">
+          <StyleName>primary</StyleName>
+          <Bounds>379,0,121,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_quantity">
+          <StyleName>primary</StyleName>
+          <Bounds>449,25,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

@@ -1,0 +1,65 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>msdyn_productinventory</EntityName>
+  <CamelCase>msdyn_productinventory</CamelCase>
+  <WorkflowLoad>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_qtyallocated.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;var:Entity.IsNew&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_qtyavailable.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;var:Entity.IsNew&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_qtyonhand.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;var:Entity.IsNew&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Form.msdyn_qtyonorder.IsEnabled&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;var:Entity.IsNew&lt;/arg&gt;&lt;/function&gt;&lt;/Workflow&gt;</WorkflowLoad>
+  <WorkflowItemChanged>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;function e="false"&gt;&lt;var&gt;Shared.sharedVar1.@this&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;var:Entity.msdyn_product&lt;/arg&gt;&lt;/function&gt;&lt;/Workflow&gt;</WorkflowItemChanged>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;SharedVariable usage="OnChangeEnabled"&gt;&lt;Name&gt;sharedVar1&lt;/Name&gt;&lt;CrmType&gt;Entity&lt;/CrmType&gt;&lt;InnerType&gt;product&lt;/InnerType&gt;&lt;/SharedVariable&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <SharedVariableNames>
+    <string>sharedVar1.arm_excludefrompartrequest</string>
+    <string>sharedVar1.arm_excludefrompartrequestandconsumption</string>
+    <string>sharedVar1.createdon</string>
+    <string>sharedVar1.currentcost</string>
+    <string>sharedVar1.defaultuomid</string>
+    <string>sharedVar1.defaultuomscheduleid</string>
+    <string>sharedVar1.description</string>
+    <string>sharedVar1.iskit</string>
+    <string>sharedVar1.isstockitem</string>
+    <string>sharedVar1.modifiedon</string>
+    <string>sharedVar1.msdyn_converttocustomerasset</string>
+    <string>sharedVar1.msdyn_defaultvendor</string>
+    <string>sharedVar1.msdyn_fieldserviceproducttype</string>
+    <string>sharedVar1.msdyn_purchasename</string>
+    <string>sharedVar1.msdyn_taxable</string>
+    <string>sharedVar1.msdyn_upccode</string>
+    <string>sharedVar1.name</string>
+    <string>sharedVar1.price</string>
+    <string>sharedVar1.pricelevelid</string>
+    <string>sharedVar1.productid</string>
+    <string>sharedVar1.productnumber</string>
+    <string>sharedVar1.producttypecode</string>
+    <string>sharedVar1.producturl</string>
+    <string>sharedVar1.quantitydecimal</string>
+    <string>sharedVar1.quantityonhand</string>
+    <string>sharedVar1.size</string>
+    <string>sharedVar1.standardcost</string>
+    <string>sharedVar1.statuscode</string>
+    <string>sharedVar1.stockvolume</string>
+    <string>sharedVar1.stockweight</string>
+    <string>sharedVar1.subjectid</string>
+    <string>sharedVar1.transactioncurrencyid</string>
+    <string>sharedVar1.vendorname</string>
+    <string>sharedVar1.vendorpartnumber</string>
+  </SharedVariableNames>
+  <ClassBinding/>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_product"/>
+        <DetailItem SchemaName="sharedVar1.productnumber"/>
+        <DetailItem SchemaName="msdyn_warehouse"/>
+        <DetailItem SchemaName="msdyn_unit"/>
+        <DetailItem SchemaName="msdyn_bin"/>
+        <DetailItem SchemaName="msdyn_row"/>
+        <DetailItem SchemaName="msdyn_qtyallocated"/>
+        <DetailItem SchemaName="msdyn_qtyavailable"/>
+        <DetailItem SchemaName="msdyn_qtyonhand"/>
+        <DetailItem SchemaName="msdyn_qtyonorder"/>
+        <DetailItem SchemaName="msdyn_reorderpoint"/>
+      </SerializedChildren>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

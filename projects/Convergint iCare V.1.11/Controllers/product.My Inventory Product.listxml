@@ -1,0 +1,76 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>product</EntityName>
+    <CamelCase>Product</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>My Inventory Product</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>transactioncurrencyid</string>
+    <string>currentcost</string>
+    <string>msdyn_fieldserviceproducttype</string>
+    <string>name</string>
+    <string>productid</string>
+    <string>productnumber</string>
+    <string>producttypecode</string>
+    <string>quantityonhand</string>
+    <string>statecode</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="product">
+      <filter type="and">
+        <condition attribute="arm_excludefrompartrequestandconsumption" operator="ne" value="1"/>
+      </filter>
+      <link-entity name="msdyn_productinventory" alias="L3" from="msdyn_product" to="productid" link-type="inner">
+        <filter type="and">
+          <condition attribute="msdyn_qtyonhand" operator="gt" value="0"/>
+        </filter>
+        <link-entity name="msdyn_warehouse" alias="L4" from="msdyn_warehouseid" to="msdyn_warehouse" link-type="inner">
+          <link-entity name="bookableresource" alias="L0" from="msdyn_warehouse" to="msdyn_warehouseid" link-type="inner">
+            <filter type="and">
+              <condition attribute="msdyn_warehouse" operator="ne" value="5b743789-c329-41ee-89e5-f81b83570131" uitype="msdyn_warehouse" uiname="Main"/>
+            </filter>
+            <link-entity name="systemuser" alias="L2" from="systemuserid" to="userid" link-type="inner">
+              <filter type="and">
+                <condition attribute="systemuserid" operator="eq-userid"/>
+              </filter>
+            </link-entity>
+          </link-entity>
+        </link-entity>
+      </link-entity>
+    </entity>
+  </Fetch>
+  <Search>
+    <attribute schema="name" method="Contains"/>
+    <attribute schema="productnumber" method="Contains"/>
+  </Search>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="name">
+          <StyleName>large10bold</StyleName>
+          <Bounds>0,2,320,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>15</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="productnumber">
+          <StyleName>gray9</StyleName>
+          <Bounds>0,26,320,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>15</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

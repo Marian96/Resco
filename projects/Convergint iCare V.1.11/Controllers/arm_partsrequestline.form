@@ -1,0 +1,21 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>arm_partsrequestline</EntityName>
+  <CamelCase>arm_partsrequestline</CamelCase>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand OnExecuteButton</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="arm_partsrequest"/>
+        <DetailItem SchemaName="arm_name"/>
+        <DetailItem SchemaName="arm_partdescription"/>
+        <DetailItem SchemaName="arm_partsrequestlineid"/>
+        <DetailItem SchemaName="arm_product"/>
+        <DetailItem SchemaName="arm_quantity"/>
+        <DetailItem SchemaName="arm_trackingnumber"/>
+      </SerializedChildren>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

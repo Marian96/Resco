@@ -1,0 +1,128 @@
+﻿<EntityList UseSyncFilter="true">
+  <Attributes>
+    <EntityName>bookableresourcebooking</EntityName>
+    <CamelCase>bookableresourcebooking</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>All Work Order Bookings Completed_old</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>starttime</OrderBy>
+  <SortAllowedFields>starttime</SortAllowedFields>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <SerializedBindings>
+    <string>bookableresourcebookingid</string>
+    <string>bookingstatus</string>
+    <string>endtime</string>
+    <string>name</string>
+    <string>resource</string>
+    <string>starttime</string>
+    <string>msdyn_workorder</string>
+    <string>bookingstatus.bookingstatus.msdyn_fieldservicestatus</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_primaryincidenttype</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_priority</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_serviceaccount</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_address1</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_name</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_serviceaccount.account.address1_composite</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_serviceaccount.account.address1_line1</string>
+  </SerializedBindings>
+  <CalendarFields>starttime;endtime</CalendarFields>
+  <MaxColumns>0</MaxColumns>
+  <TemplateSelectorRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="false" info="Set booking status dot color" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970000&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Scheduled&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970001&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Traveling&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970003&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:InProgress&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970004&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Completed&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970002&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:OnBreak&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(bookingstatus.bookingstatus.msdyn_fieldservicestatus)&lt;/var&gt;&lt;op&gt;Equal&lt;/op&gt;&lt;arg&gt;Picklist:690970005&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Canceled&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="false" info="Hide address icon when no address" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.(msdyn_workorder.msdyn_workorder.msdyn_address1)&lt;/var&gt;&lt;op&gt;DoesNotContainData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.MapPin.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Hidden&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="false" info="Hide booking status when no status" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.bookingstatus&lt;/var&gt;&lt;op&gt;DoesNotContainData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Row.StatusDot.Style&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;String:Hidden&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</TemplateSelectorRule>
+  <Fetch version="1.0">
+    <entity name="bookableresourcebooking">
+      <filter type="and">
+        <condition attribute="bookingstatus" operator="eq" value="4f15f744-4a95-ea11-a811-000d3a3477a0" uitype="bookingstatus" uiname="Work Complete"/>
+      </filter>
+      <link-entity name="bookableresource" alias="L0" from="bookableresourceid" to="resource" link-type="inner">
+        <filter type="and">
+          <filter type="and">
+            <condition attribute="userid" operator="eq-userid"/>
+            <condition attribute="statecode" operator="eq" value="0"/>
+          </filter>
+        </filter>
+      </link-entity>
+    </entity>
+  </Fetch>
+  <Search>
+    <attribute schema="name" method="Contains"/>
+    <attribute schema="resource" method="Contains" reference="true"/>
+    <attribute schema="msdyn_workorder" method="Contains" reference="true"/>
+  </Search>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>450</Width>
+      <Height>103</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_address1">
+          <StyleName>gray</StyleName>
+          <Bounds>195,55,168,16</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_serviceaccount">
+          <StyleName>primary</StyleName>
+          <Bounds>195,15,197,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="bookingstatus">
+          <StyleName>gray</StyleName>
+          <Bounds>49,36,84,16</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="starttime">
+          <StyleName>time_only</StyleName>
+          <Bounds>49,15,84,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_name">
+          <StyleName>gray</StyleName>
+          <Bounds>195,37,95,16</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>0</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="StatusDot">
+          <IsConstant>true</IsConstant>
+          <StyleName>StatusDot</StyleName>
+          <Bounds>17,36,30,30</Bounds>
+          <CellKind>1</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="MapPin">
+          <IsConstant>true</IsConstant>
+          <StyleName>MapPin</StyleName>
+          <Bounds>176,37,16,16</Bounds>
+          <CellKind>1</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="starttime">
+          <StyleName>date</StyleName>
+          <Bounds>49,51,84,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_priority">
+          <StyleName>gray</StyleName>
+          <Bounds>49,70,100,16</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_primaryincidenttype">
+          <StyleName>gray</StyleName>
+          <Bounds>195,69,196,16</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

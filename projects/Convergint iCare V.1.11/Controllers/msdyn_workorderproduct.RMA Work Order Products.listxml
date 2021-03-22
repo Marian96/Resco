@@ -1,0 +1,55 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_workorderproduct</EntityName>
+    <CamelCase>msdyn_workorderproduct</CamelCase>
+  </Attributes>
+  <Name>RMA Work Order Products</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_name</OrderBy>
+  <SerializedBindings>
+    <string>msdyn_linestatus</string>
+    <string>msdyn_name</string>
+    <string>msdyn_warehouse</string>
+    <string>msdyn_workorder</string>
+    <string>msdyn_workorderproductid</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="msdyn_workorderproduct">
+      <filter type="and">
+        <condition attribute="msdyn_linestatus" operator="eq" value="690970001"/>
+      </filter>
+      <link-entity name="msdyn_rmaproduct" alias="L2" from="msdyn_woproduct" to="msdyn_workorderproductid" link-type="inner"/>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_name">
+          <StyleName>primary</StyleName>
+          <Bounds>2,2,302,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_workorder">
+          <StyleName>primary</StyleName>
+          <Bounds>2,25,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_linestatus">
+          <StyleName>primary</StyleName>
+          <Bounds>106,25,100,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

@@ -1,0 +1,120 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_rmaproduct</EntityName>
+    <CamelCase>msdyn_rmaproduct</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <AutoHeader>1</AutoHeader>
+  <OrderBy>msdyn_lineorder</OrderBy>
+  <SerializedBindings>
+    <string>createdon</string>
+    <string>msdyn_itemstatus</string>
+    <string>msdyn_lineorder</string>
+    <string>modifiedon</string>
+    <string>msdyn_name</string>
+    <string>ownerid</string>
+    <string>msdyn_product</string>
+    <string>msdyn_quantitytoreturn</string>
+    <string>msdyn_qtyprocessed</string>
+    <string>msdyn_qtyreceived</string>
+    <string>msdyn_rmaproductid</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+    <string>msdyn_woproduct</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="msdyn_rmaproduct"/>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>402</Width>
+      <Height>134</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_product">
+          <StyleName>primary</StyleName>
+          <Bounds>185,2,215,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_lineorder">
+          <StyleName>primary</StyleName>
+          <Bounds>185,24,215,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_quantitytoreturn">
+          <StyleName>primary</StyleName>
+          <Bounds>185,67,215,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_qtyreceived">
+          <StyleName>primary</StyleName>
+          <Bounds>185,88,215,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_itemstatus">
+          <StyleName>primary</StyleName>
+          <Bounds>185,46,215,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_qtyprocessed">
+          <StyleName>primary</StyleName>
+          <Bounds>185,110,215,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Product:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold Red</StyleName>
+          <Bounds>2,2,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Line Order:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,24,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Line Status:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,46,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Quantity:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,67,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Quantity Received:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,88,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Quantity Processed:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,110,180,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

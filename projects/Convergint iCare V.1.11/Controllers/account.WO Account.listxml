@@ -1,0 +1,111 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>account</EntityName>
+    <VisualStudioProjectId>c0f71827-e4f6-464e-a71d-c36687d5738e</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>WO Account</Name>
+  <Kind>LookupList</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>accountid</string>
+    <string>name</string>
+    <string>accountnumber</string>
+    <string>address1_composite</string>
+    <string>address1_city</string>
+    <string>address1_country</string>
+    <string>address1_latitude</string>
+    <string>address1_longitude</string>
+    <string>address1_name</string>
+    <string>address1_stateorprovince</string>
+    <string>address1_line1</string>
+    <string>address1_line2</string>
+    <string>address1_line3</string>
+    <string>address1_postalcode</string>
+    <string>address2_addresstypecode</string>
+    <string>address2_latitude</string>
+    <string>address2_longitude</string>
+    <string>msdyn_billingaccount</string>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>donotemail</string>
+    <string>donotphone</string>
+    <string>emailaddress1</string>
+    <string>fax</string>
+    <string>telephone1</string>
+    <string>telephone3</string>
+    <string>modifiedon</string>
+    <string>telephone2</string>
+    <string>ownerid</string>
+    <string>preferredequipmentid</string>
+    <string>primarycontactid</string>
+    <string>defaultpricelevelid</string>
+    <string>msdyn_salestaxcode</string>
+    <string>msdyn_serviceterritory</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+    <string>msdyn_taxexempt</string>
+    <string>msdyn_taxexemptnumber</string>
+    <string>websiteurl</string>
+    <string>msdyn_workorderinstructions</string>
+  </SerializedBindings>
+  <HasGpsFields>true</HasGpsFields>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="account">
+      <link-entity name="msdyn_workorder" alias="L0" from="msdyn_serviceaccount" to="accountid" link-type="inner"/>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>450</Width>
+      <Height>125</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="name">
+          <StyleName>primary</StyleName>
+          <Bounds>174,2,220,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Account:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold Red</StyleName>
+          <Bounds>2,2,170,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Address:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,44,170,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="address1_composite">
+          <StyleName>Primary Top</StyleName>
+          <Bounds>174,44,220,76</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="accountnumber">
+          <StyleName>primary</StyleName>
+          <Bounds>174,23,220,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Account Number:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,23,170,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

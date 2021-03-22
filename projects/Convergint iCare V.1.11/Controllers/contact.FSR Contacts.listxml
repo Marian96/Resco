@@ -1,0 +1,96 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>contact</EntityName>
+    <VisualStudioProjectId>c0f71827-e4f6-464e-a71d-c36687d5738e</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>FSR Contacts</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>fullname</OrderBy>
+  <SerializedBindings>
+    <string>address1_composite</string>
+    <string>address1_city</string>
+    <string>address1_country</string>
+    <string>address1_latitude</string>
+    <string>address1_longitude</string>
+    <string>address1_stateorprovince</string>
+    <string>address1_line1</string>
+    <string>address1_line2</string>
+    <string>address1_line3</string>
+    <string>address1_postalcode</string>
+    <string>telephone1</string>
+    <string>parentcustomerid</string>
+    <string>contactid</string>
+    <string>createdon</string>
+    <string>emailaddress1</string>
+    <string>fax</string>
+    <string>firstname</string>
+    <string>fullname</string>
+    <string>jobtitle</string>
+    <string>lastname</string>
+    <string>mobilephone</string>
+    <string>modifiedon</string>
+    <string>ownerid</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+  </SerializedBindings>
+  <HasGpsFields>true</HasGpsFields>
+  <MaxColumns>0</MaxColumns>
+  <Search>
+    <attribute schema="parentcustomerid" method="Contains" reference="true"/>
+    <attribute schema="fullname" method="Contains"/>
+    <attribute schema="emailaddress1" method="Contains"/>
+  </Search>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>530</Width>
+      <Height>70</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="fullname">
+          <StyleName>primary</StyleName>
+          <Bounds>213,22,295,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="parentcustomerid">
+          <StyleName>primary</StyleName>
+          <Bounds>213,2,295,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="emailaddress1">
+          <StyleName>primary</StyleName>
+          <Bounds>213,42,295,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Company Name:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,2,208,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Name:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,22,208,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Email:">
+          <IsConstant>true</IsConstant>
+          <StyleName>Primary Bold</StyleName>
+          <Bounds>2,42,208,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

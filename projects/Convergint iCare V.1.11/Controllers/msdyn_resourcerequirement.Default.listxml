@@ -1,0 +1,62 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>msdyn_resourcerequirement</EntityName>
+    <CamelCase>msdyn_resourcerequirement</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>msdyn_name</OrderBy>
+  <SerializedBindings>
+    <string>arm_description</string>
+    <string>msdyn_fromdate</string>
+    <string>msdyn_name</string>
+    <string>msdyn_resourcerequirementid</string>
+    <string>msdyn_todate</string>
+    <string>msdyn_priority.msdyn_priority.msdyn_priorityid</string>
+    <string>msdyn_workorder.msdyn_workorder.msdyn_name</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="msdyn_resourcerequirement">
+      <filter type="and">
+        <condition attribute="msdyn_remainingduration" operator="gt" value="0"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>480</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="msdyn_workorder.msdyn_workorder.msdyn_name">
+          <StyleName>primary</StyleName>
+          <Bounds>3,3,119,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_fromdate">
+          <StyleName>gray</StyleName>
+          <Bounds>2,27,57,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="msdyn_todate">
+          <StyleName>gray</StyleName>
+          <Bounds>418,26,60,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="arm_description">
+          <StyleName>gray</StyleName>
+          <Bounds>126,3,290,43</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

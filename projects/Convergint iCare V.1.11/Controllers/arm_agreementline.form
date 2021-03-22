@@ -1,0 +1,20 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>arm_agreementline</EntityName>
+  <CamelCase>arm_agreementline</CamelCase>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand OnExecuteButton</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="arm_name"/>
+        <DetailItem SchemaName="arm_startdate"/>
+        <DetailItem SchemaName="arm_enddate"/>
+        <DetailItem SchemaName="arm_customerasset"/>
+        <DetailItem SchemaName="arm_laborcategory"/>
+        <DetailItem SchemaName="ownerid"/>
+      </SerializedChildren>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

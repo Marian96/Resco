@@ -1,0 +1,54 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>arm_servicenote</EntityName>
+    <CamelCase>arm_servicenote</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>subject</OrderBy>
+  <SerializedBindings>
+    <string>activityid</string>
+    <string>description</string>
+    <string>modifiedon</string>
+    <string>ownerid</string>
+    <string>subject</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="arm_servicenote">
+      <filter type="and">
+        <condition attribute="activitytypecode" operator="eq" value="10579"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>460</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="description">
+          <StyleName>primary</StyleName>
+          <Bounds>2,3,455,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="ownerid">
+          <StyleName>gray</StyleName>
+          <Bounds>2,25,47,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="modifiedon">
+          <StyleName>r_gray</StyleName>
+          <Bounds>410,24,47,20</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>8</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>
