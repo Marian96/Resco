@@ -1,0 +1,78 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>quotedetail</EntityName>
+    <CamelCase>quotedetail</CamelCase>
+    <ClassBinding>
+      <SerializedClassBinding name="#PrimaryName" label="PrimaryName" type="String"/>
+    </ClassBinding>
+  </Attributes>
+  <Name>Quote Service</Name>
+  <Kind>AssociatedList</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>productdescription</OrderBy>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <SerializedBindings>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>productid</string>
+    <string>extendedamount</string>
+    <string>id</string>
+    <string>isservice</string>
+    <string>is_service</string>
+    <string>manualdiscountamount</string>
+    <string>modifiedon</string>
+    <string>priceperunit</string>
+    <string>ispriceoverridden</string>
+    <string>quantity</string>
+    <string>quoteid</string>
+    <string>isproductoverridden</string>
+    <string>tax</string>
+    <string>uomid</string>
+    <string>volumediscountamount</string>
+    <string>productdescription</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <ListOnSaveRule>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.PrimaryName&lt;/var&gt;&lt;op&gt;Contains&lt;/op&gt;&lt;arg&gt;String:Service&lt;/arg&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.isservice&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:1&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.is_service&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Boolean:1&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</ListOnSaveRule>
+  <Fetch version="1.0">
+    <entity name="quotedetail">
+      <filter type="and">
+        <condition attribute="isservice" operator="eq" value="1"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="productid">
+          <StyleName>primary</StyleName>
+          <Bounds>10,2,189,28</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="quantity">
+          <StyleName>gray</StyleName>
+          <Bounds>10,31,146,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="isservice">
+          <StyleName>r_gray</StyleName>
+          <Bounds>157,31,152,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="extendedamount">
+          <StyleName>Primary Right</StyleName>
+          <Bounds>201,2,110,28</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

@@ -1,0 +1,1 @@
+﻿@Search,account,contact,dws_vehicle,fs_resource,fs_workorderschedule,appointment,@Scheduler;;WorkOrders Scheduler,opportunity,quote,fs_workorder,invoice,dws_suppliercontact,dws_suppliertype_lookup,productpricelevel,pricelevel,product,quotedetail,broker_report,dws_configuration|serviceappointment,@Setup,@About

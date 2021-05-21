@@ -1,0 +1,113 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>fs_workorder</EntityName>
+    <CamelCase>fs_workorder</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>Draft WorkOrders</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>isamountsystemcalculated</string>
+    <string>completionpercent</string>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>customerid</string>
+    <string>discountamount</string>
+    <string>discountpercentage</string>
+    <string>isestimatesystemcalculated</string>
+    <string>estimatedamount</string>
+    <string>estimatedduration</string>
+    <string>id</string>
+    <string>modifiedon</string>
+    <string>name</string>
+    <string>ownerid</string>
+    <string>owningbusinessunit</string>
+    <string>pricelevelid</string>
+    <string>statecode</string>
+    <string>statuscode</string>
+    <string>territoryid</string>
+    <string>totalamount</string>
+    <string>totalduration</string>
+    <string>dws_vehicle</string>
+    <string>dws_vehicle.dws_vehicle.vehiclebodytype</string>
+    <string>dws_vehicle.dws_vehicle.dws_capacity</string>
+    <string>dws_vehicle.dws_vehicle.chassisnumber</string>
+    <string>dws_vehicle.dws_vehicle.vehiclecolour</string>
+    <string>dws_vehicle.dws_vehicle.complianceplate</string>
+    <string>dws_vehicle.dws_vehicle.manualcreation</string>
+    <string>dws_vehicle.dws_vehicle.createdon</string>
+    <string>dws_vehicle.dws_vehicle.customeraccount</string>
+    <string>dws_vehicle.dws_vehicle.dws_customer_name</string>
+    <string>dws_vehicle.dws_vehicle.dws_cylinders</string>
+    <string>dws_vehicle.dws_vehicle.dws_drive</string>
+    <string>dws_vehicle.dws_vehicle.dws_engine_configuration</string>
+    <string>dws_vehicle.dws_vehicle.enginenumber</string>
+    <string>dws_vehicle.dws_vehicle.dws_fleet_number</string>
+    <string>dws_vehicle.dws_vehicle.dws_fuel_delivery</string>
+    <string>dws_vehicle.dws_vehicle.dws_fuel_type</string>
+    <string>dws_vehicle.dws_vehicle.dws_hour_meter</string>
+    <string>dws_vehicle.dws_vehicle.id</string>
+    <string>dws_vehicle.dws_vehicle.vehiclemake</string>
+    <string>dws_vehicle.dws_vehicle.vehiclemodel</string>
+    <string>dws_vehicle.dws_vehicle.modifiedon</string>
+    <string>dws_vehicle.dws_vehicle.name</string>
+    <string>dws_vehicle.dws_vehicle.nevdissearchdate</string>
+    <string>dws_vehicle.dws_vehicle.dws_odometer</string>
+    <string>dws_vehicle.dws_vehicle.quote</string>
+    <string>dws_vehicle.dws_vehicle.registrationplate</string>
+    <string>dws_vehicle.dws_vehicle.registrationstate</string>
+    <string>dws_vehicle.dws_vehicle.statecode</string>
+    <string>dws_vehicle.dws_vehicle.statuscode</string>
+    <string>dws_vehicle.dws_vehicle.dws_stock_number</string>
+    <string>dws_vehicle.dws_vehicle.dws_transmission</string>
+    <string>dws_vehicle.dws_vehicle.dws_tyre_size</string>
+    <string>dws_vehicle.dws_vehicle.dws_variant</string>
+    <string>dws_vehicle.dws_vehicle.vehicletype</string>
+    <string>dws_vehicle.dws_vehicle.versionnumber</string>
+    <string>dws_vehicle.dws_vehicle.vin</string>
+    <string>dws_vehicle.dws_vehicle.dws_work_order</string>
+    <string>dws_vehicle.dws_vehicle.yearofmanufacture</string>
+  </SerializedBindings>
+  <CalendarFields>createdon;createdon</CalendarFields>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="fs_workorder">
+      <filter type="and">
+        <condition attribute="statuscode" operator="eq" value="1"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>240</DesignWidth>
+      <DesignHeight>40</DesignHeight>
+      <Name>Default</Name>
+      <Width>240</Width>
+      <Height>40</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="dws_vehicle.dws_vehicle.name">
+          <StyleName>primary</StyleName>
+          <Bounds>8,2,227,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_vehicle.dws_vehicle.customeraccount">
+          <StyleName>gray</StyleName>
+          <Bounds>8,26,110,11</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="completionpercent">
+          <StyleName>r_gray_percent</StyleName>
+          <Bounds>118,26,114,11</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

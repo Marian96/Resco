@@ -1,0 +1,74 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>invoicedetail</EntityName>
+    <CamelCase>invoicedetail</CamelCase>
+    <ClassBinding>
+      <SerializedClassBinding name="#PrimaryName" label="PrimaryName" type="String"/>
+    </ClassBinding>
+  </Attributes>
+  <Name>Invoice Service</Name>
+  <Kind>AssociatedList</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>productdescription</OrderBy>
+  <SerializedBindings>
+    <string>id</string>
+    <string>productdescription</string>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>productid</string>
+    <string>extendedamount</string>
+    <string>invoiceid</string>
+    <string>is_service</string>
+    <string>manualdiscountamount</string>
+    <string>modifiedon</string>
+    <string>priceperunit</string>
+    <string>ispriceoverridden</string>
+    <string>quantity</string>
+    <string>isproductoverridden</string>
+    <string>tax</string>
+    <string>uomid</string>
+    <string>volumediscountamount</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="#PrimaryName">
+          <StyleName>primary</StyleName>
+          <Bounds>10,2,302,28</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="is_service">
+          <StyleName>gray</StyleName>
+          <Bounds>10,31,63,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="quantity">
+          <StyleName>r_gray</StyleName>
+          <Bounds>254,31,55,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="priceperunit">
+          <StyleName>gray</StyleName>
+          <Bounds>85,32,63,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="extendedamount">
+          <StyleName>gray</StyleName>
+          <Bounds>171,32,63,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

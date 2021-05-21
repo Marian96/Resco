@@ -1,0 +1,45 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>invoice</EntityName>
+  <CamelCase>Invoice</CamelCase>
+  <WorkflowLoad>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.pricelevelid&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Lookup:pricelevel,10422342-69dc-4e42-a18c-9b4f0d1895fa,Wholesale EUR&lt;/arg&gt;&lt;/function&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dws_gst_rate&lt;/var&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;arg&gt;Decimal:10&lt;/arg&gt;&lt;/function&gt;&lt;/Workflow&gt;</WorkflowLoad>
+  <WorkflowItemChanged>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="true" info="Calc GST Base Rate" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dws_gst_rate&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dws_gst_rate_base&lt;/var&gt;&lt;func&gt;Division&lt;/func&gt;&lt;arg&gt;Decimal:1&lt;/arg&gt;&lt;arg&gt;var:Entity.dws_gst_rate&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Calculate Labour Total $" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dws_labour_total_hours&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dws_labour_rate&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dws_labour_total&lt;/var&gt;&lt;func&gt;Multiplication&lt;/func&gt;&lt;arg&gt;var:Entity.dws_labour_rate&lt;/arg&gt;&lt;arg&gt;var:Entity.dws_labour_total_hours&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Calc Total exgst" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dws_labour_total&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.totalamount&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dws_total_exgst&lt;/var&gt;&lt;func&gt;Addition&lt;/func&gt;&lt;arg&gt;var:Entity.totalamount&lt;/arg&gt;&lt;arg&gt;var:Entity.dws_labour_total&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="GST Value Calc" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dws_total_exgst&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dws_gst&lt;/var&gt;&lt;func&gt;Multiplication&lt;/func&gt;&lt;arg&gt;var:Entity.dws_total_exgst&lt;/arg&gt;&lt;arg&gt;var:Entity.dws_gst_rate_base&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="QuoteTotal Calc" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dws_total_exgst&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dws_invoice_total&lt;/var&gt;&lt;func&gt;Addition&lt;/func&gt;&lt;arg&gt;var:Entity.dws_total_exgst&lt;/arg&gt;&lt;arg&gt;var:Entity.dws_gst&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;branch e="true" info="Invoice Balance due calc" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="And"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dws_invoice_total&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dws_balance_due&lt;/var&gt;&lt;func&gt;Difference&lt;/func&gt;&lt;arg&gt;var:Entity.dws_invoice_total&lt;/arg&gt;&lt;arg&gt;var:Entity.dws_payment&lt;/arg&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</WorkflowItemChanged>
+  <WorkflowSave>&lt;?xml version="1.0" ?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="11" version="0"&gt;&lt;branch e="true" info="" &gt;&lt;if e="true"&gt;&lt;conditions e="true" op="Or"&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dwd_date_time&lt;/var&gt;&lt;op&gt;ContainsData&lt;/op&gt;&lt;/condition&gt;&lt;condition e="false"&gt;&lt;var&gt;Entity.dwd_date_time&lt;/var&gt;&lt;op&gt;DoesNotContainData&lt;/op&gt;&lt;/condition&gt;&lt;/conditions&gt;&lt;action&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.dwd_date_time&lt;/var&gt;&lt;func&gt;SetNow&lt;/func&gt;&lt;/function&gt;&lt;/action&gt;&lt;/if&gt;&lt;/branch&gt;&lt;/Workflow&gt;</WorkflowSave>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <PrimaryCommands>GetProducts|GetProducts||ChangeState|ChangeState|2;3|RunMobileReport|Print Invoice|7cb39879-73e2-49d5-b496-9bf193afc803</PrimaryCommands>
+  <SharedVariableNames/>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand OnExecuteButton</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="customerid"/>
+        <DetailItem SchemaName="name"/>
+        <DetailItem SchemaName="dws_vehicle"/>
+        <DetailItem SchemaName="dwd_date_time"/>
+        <DetailItem SchemaName="dws_invoice_number"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="totalamount"/>
+        <DetailItem SchemaName="dws_total_exgst"/>
+        <DetailItem SchemaName="dws_gst"/>
+        <DetailItem SchemaName="dws_invoice_total"/>
+        <DetailItem SchemaName="dws_payment"/>
+        <DetailItem SchemaName="dws_balance_due"/>
+        <DetailItem SchemaName="discountamount"/>
+        <DetailItem SchemaName="discountpercentage"/>
+        <DetailItem SchemaName="id"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0" DocCommands="0">
+      <Name>Invoice Products List</Name>
+      <Binding SchemaName="invoicedetail.invoiceid"/>
+      <Views>invoicedetail.*:invoicedetail.@Invoice Product</Views>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\annotation@2x.png" IsIconNameReadOnly="0">
+      <Name>Notes List</Name>
+      <Binding SchemaName="annotation.objectid"/>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

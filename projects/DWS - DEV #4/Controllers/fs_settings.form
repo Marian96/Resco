@@ -1,0 +1,22 @@
+﻿<EntityForm version="2" flexi="1" resize="0" fullscreen="0" fleximode="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>fs_settings</EntityName>
+  <CamelCase>fs_settings</CamelCase>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <ClassBinding />
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="name" />
+        <DetailItem SchemaName="location_address" />
+        <DetailItem SchemaName="start_of_day" />
+        <DetailItem SchemaName="working_day_duration" />
+        <DetailItem SchemaName="first_day_of_week" />
+        <DetailItem SchemaName="break_per_day" />
+        <DetailItem SchemaName="working_weekends" />
+      </SerializedChildren>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>

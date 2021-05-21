@@ -1,0 +1,88 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>dws_vehicle</EntityName>
+    <CamelCase>dws_vehicle</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>customeraccount</string>
+    <string>dws_customer_name</string>
+    <string>dws_fleet_number</string>
+    <string>id</string>
+    <string>vehiclemake</string>
+    <string>vehiclemodel</string>
+    <string>name</string>
+    <string>registrationplate</string>
+    <string>registrationstate</string>
+    <string>dws_stock_number</string>
+    <string>yearofmanufacture</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Search>
+    <attribute schema="dws_fleet_number" method="Contains"/>
+    <attribute schema="dws_stock_number" method="Contains"/>
+    <attribute schema="registrationplate" method="Contains"/>
+  </Search>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>55</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="registrationplate">
+          <StyleName>primary</StyleName>
+          <Bounds>10,2,103,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="vehiclemake">
+          <StyleName>Secondary</StyleName>
+          <Bounds>12,26,78,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="vehiclemodel">
+          <StyleName>Secondary</StyleName>
+          <Bounds>91,26,79,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="yearofmanufacture">
+          <StyleName>Secondary</StyleName>
+          <Bounds>181,25,45,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_stock_number">
+          <StyleName>Secondary</StyleName>
+          <Bounds>11,39,91,13</Bounds>
+          <CellKind>3</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_fleet_number">
+          <StyleName>Secondary</StyleName>
+          <Bounds>115,39,60,14</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="registrationstate">
+          <StyleName>Secondary</StyleName>
+          <Bounds>236,25,74,12</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="customeraccount">
+          <StyleName>Primary Right</StyleName>
+          <Bounds>119,1,192,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

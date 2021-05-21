@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RoutePlan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ActivityName>fs_workorderschedule</ActivityName>
+  <StartDateField>scheduledstart</StartDateField>
+  <EndDateField>scheduledend</EndDateField>
+  <LookupField>workorderid</LookupField>
+  <FilterFields>resourceid</FilterFields>
+  <DisableCompletion>false</DisableCompletion>
+  <ViewMode>false</ViewMode>
+  <StartAtWork>true</StartAtWork>
+  <DefaultStartHour>08:00</DefaultStartHour>
+  <DefaultDuration>30</DefaultDuration>
+  <WorkLocation>42.345799,-71.068621</WorkLocation>
+  <EnabledWorkflows>OnRouteItemAdded OnRouteItemCompleted</EnabledWorkflows>
+  <WorkflowRouteItemAdded>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Workflow e="true" isvalid="true" syntaxVersion="7" version="0"&gt;&lt;function e="false"&gt;&lt;var&gt;Entity.statuscode&lt;/var&gt;&lt;arg&gt;Status:1&lt;/arg&gt;&lt;func&gt;Assign&lt;/func&gt;&lt;/function&gt;&lt;/Workflow&gt;</WorkflowRouteItemAdded>
+</RoutePlan>

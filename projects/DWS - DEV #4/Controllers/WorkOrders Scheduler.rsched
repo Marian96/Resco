@@ -1,0 +1,116 @@
+﻿<Scheduler>
+  <Version>3</Version>
+  <BorderWidth>2</BorderWidth>
+  <BorderRadius>4</BorderRadius>
+  <Name>WorkOrders Scheduler</Name>
+  <ResourceEntity>fs_resource</ResourceEntity>
+  <ResourceViews>fs_resource.*:fs_resource.@Resources</ResourceViews>
+  <ResourceTerritory>
+    <Entity>fs_resource</Entity>
+    <PrimaryKey>id</PrimaryKey>
+    <PrimaryName>name</PrimaryName>
+    <LookupEntity>fs_resourceterritory</LookupEntity>
+    <LookupField1>
+      <Entity>fs_resource</Entity>
+      <Field>resourceid</Field>
+      <PrimaryKey>id</PrimaryKey>
+      <PrimaryName>name</PrimaryName>
+    </LookupField1>
+    <LookupField2>
+      <Entity>fs_territory</Entity>
+      <Field>territoryid</Field>
+      <PrimaryKey>id</PrimaryKey>
+      <PrimaryName>name</PrimaryName>
+    </LookupField2>
+  </ResourceTerritory>
+  <ResourceSkill>
+    <Entity>fs_resource</Entity>
+    <PrimaryKey>id</PrimaryKey>
+    <PrimaryName>name</PrimaryName>
+    <LookupEntity>fs_resourceskill</LookupEntity>
+    <LookupField1>
+      <Entity>fs_resource</Entity>
+      <Field>resourceid</Field>
+      <PrimaryKey>id</PrimaryKey>
+      <PrimaryName>name</PrimaryName>
+    </LookupField1>
+    <LookupField2>
+      <Entity>fs_skill</Entity>
+      <Field>skillid</Field>
+      <PrimaryKey>id</PrimaryKey>
+      <PrimaryName>name</PrimaryName>
+    </LookupField2>
+  </ResourceSkill>
+  <ActivityName>fs_workorderschedule</ActivityName>
+  <StartDateField>scheduledstart</StartDateField>
+  <EndDateField>scheduledend</EndDateField>
+  <TravelToField>scheduledtravelto</TravelToField>
+  <TravelFromField>scheduledtravelfrom</TravelFromField>
+  <TravelModeField>travelmode</TravelModeField>
+  <ArrivedOnField>arrivedon</ArrivedOnField>
+  <StartedOnField>startedon</StartedOnField>
+  <EndednOnField>endedon</EndednOnField>
+  <LookupField>workorderid</LookupField>
+  <ResourceField>resourceid</ResourceField>
+  <StatusField>statuscode</StatusField>
+  <WorkEntity>fs_workorder</WorkEntity>
+  <WorkTerritory>
+    <Entity>fs_territory</Entity>
+    <Field>territoryid</Field>
+    <PrimaryKey>id</PrimaryKey>
+    <PrimaryName>name</PrimaryName>
+  </WorkTerritory>
+  <WorkSkill>
+    <Entity>fs_workorder</Entity>
+    <PrimaryKey>id</PrimaryKey>
+    <PrimaryName>name</PrimaryName>
+    <LookupEntity>fs_workorderskill</LookupEntity>
+    <LookupField1>
+      <Entity>fs_workorder</Entity>
+      <Field>workorderid</Field>
+      <PrimaryKey>id</PrimaryKey>
+      <PrimaryName>name</PrimaryName>
+    </LookupField1>
+    <LookupField2>
+      <Entity>fs_skill</Entity>
+      <Field>skillid</Field>
+      <PrimaryKey>id</PrimaryKey>
+      <PrimaryName>name</PrimaryName>
+    </LookupField2>
+  </WorkSkill>
+  <WorkViews>fs_workorder.Draft WorkOrders:fs_workorder.Opened WorkOrders:fs_workorder.Ready WorkOrders:fs_workorder.Scheduled WorkOrders:fs_workorder.@Scheduler Ready WorkOrders</WorkViews>
+  <TaskViews>fs_workorderschedule.*:fs_workorderschedule.@Scheduler WorkOrder Schedules</TaskViews>
+  <VisitDurationInMinutes>60</VisitDurationInMinutes>
+  <VisitDurationInMinutesField>estimatedduration</VisitDurationInMinutesField>
+  <MinDaysBetweenVisits>0</MinDaysBetweenVisits>
+  <ProgressField>completionpercent</ProgressField>
+  <TimeOffsName>fs_time_off</TimeOffsName>
+  <TimeOffsColor>rgba(217,40,40,1)</TimeOffsColor>
+  <TimeOffsTextColor>rgb(255,255,255)</TimeOffsTextColor>
+  <TimeOffsBorderColor>rgb(163,164,165)</TimeOffsBorderColor>
+  <TimeOffsStartField>from</TimeOffsStartField>
+  <TimeOffsEndField>to</TimeOffsEndField>
+  <TimeOffsResourceField>resourceid</TimeOffsResourceField>
+  <StatusCodeList>
+    <StatusCode name="Planned" value="1" valueType="number" taskStatusType="1" color="rgb(39,196,105)" textColor="white" borderColor="rgba(25,126,68,1)" isSecondaryValue="false"/>
+    <StatusCode name="Traveling" value="2" valueType="number" taskStatusType="2" color="rgba(240,230,47,1)" textColor="white" borderColor="rgba(44,96,149,1)" isSecondaryValue="false"/>
+    <StatusCode name="Arrived" value="3" valueType="number" taskStatusType="2" color="rgba(239,187,20,1)" textColor="white" borderColor="rgba(44,96,149,1)" isSecondaryValue="false"/>
+    <StatusCode name="Working" value="4" valueType="number" taskStatusType="2" color="rgba(239,19,73,1)" textColor="white" borderColor="rgba(44,96,149,1)" isSecondaryValue="false"/>
+    <StatusCode name="On Break" value="5" valueType="number" taskStatusType="2" color="rgb(72,151,230)" textColor="white" borderColor="rgba(44,96,149,1)" isSecondaryValue="false"/>
+    <StatusCode name="Completed" value="6" valueType="number" taskStatusType="5" color="#ffc400" textColor="rgba(64,64,64,1)" borderColor="rgba(154,119,0,1)" isSecondaryValue="false"/>
+    <StatusCode name="Canceled" value="7" valueType="number" taskStatusType="6" color="#f2c9c9" textColor="rgba(64,64,64,1)" borderColor="rgba(144,53,53,1)" isSecondaryValue="false"/>
+  </StatusCodeList>
+  <FrequentVisits enabled="0" visits="1" frequency="7" minDaysBetweenVisits="1"/>
+  <Territory>
+    <Entity>fs_territory</Entity>
+    <Field>territoryid</Field>
+    <PrimaryKey>id</PrimaryKey>
+    <PrimaryName>name</PrimaryName>
+  </Territory>
+  <Skill>
+    <Entity>fs_skill</Entity>
+    <Field>skillid</Field>
+    <PrimaryKey>id</PrimaryKey>
+    <PrimaryName>name</PrimaryName>
+  </Skill>
+</Scheduler>

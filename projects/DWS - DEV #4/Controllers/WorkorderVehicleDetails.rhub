@@ -1,0 +1,12 @@
+﻿<HubDefinition>
+  <Group name="Workorder">
+    <View name="Vehicle">
+      <EntityView entity="dws_vehicle" view="Default" sort="name"/>
+    </View>
+    <View name="Customer Account">
+      <EntityView entity="account" view="All Accounts" sort="name"/>
+    </View>
+  </Group>
+  <Item entity="dws_vehicle" property="undefined" parent="true"/>
+  <Item entity="account" property="undefined" parent="true"/>
+</HubDefinition>

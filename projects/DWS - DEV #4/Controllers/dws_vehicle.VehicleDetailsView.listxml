@@ -1,0 +1,167 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>dws_vehicle</EntityName>
+    <CamelCase>dws_vehicle</CamelCase>
+  </Attributes>
+  <Name>VehicleDetailsView</Name>
+  <Kind>AssociatedList</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>vehiclebodytype</string>
+    <string>dws_capacity</string>
+    <string>vehiclecolour</string>
+    <string>dws_cylinders</string>
+    <string>dws_drive</string>
+    <string>dws_engine_config_text</string>
+    <string>dws_engine_configuration</string>
+    <string>dws_fuel_delivery</string>
+    <string>dws_fuel_system_text</string>
+    <string>dws_fuel_type</string>
+    <string>id</string>
+    <string>vehiclemake</string>
+    <string>vehiclemodel</string>
+    <string>name</string>
+    <string>registrationplate</string>
+    <string>dws_transmission</string>
+    <string>dws_tyre_size</string>
+    <string>dws_variant</string>
+    <string>vehicletype</string>
+    <string>yearofmanufacture</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>400</Width>
+      <Height>250</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="vehiclemake">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,35,95,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="vehiclemodel">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,58,80,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="vehiclebodytype">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,81,170,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="yearofmanufacture">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,104,83,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_drive">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,150,47,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_engine_config_text">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,127,70,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_transmission">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,173,57,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="registrationplate">
+          <StyleName>Registration Number</StyleName>
+          <Bounds>5,3,139,27</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_fuel_system_text">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,196,120,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_tyre_size">
+          <StyleName>Vehicle details #2</StyleName>
+          <Bounds>150,219,139,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Make">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,35,54,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Model">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,58,65,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Body Type">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,81,101,17</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Manufacture Year">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,104,140,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Drive">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,150,50,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Engine Config">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,127,118,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Trans">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,173,51,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Fuel System">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,196,90,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="Tyre Size">
+          <IsConstant>true</IsConstant>
+          <StyleName>Vehicle Details Headings</StyleName>
+          <Bounds>5,219,66,18</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

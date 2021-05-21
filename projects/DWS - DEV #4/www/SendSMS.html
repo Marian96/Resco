@@ -1,0 +1,47 @@
+﻿<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Empty Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <script src="JSBridge.js"></script>
+</head>
+<body>
+    <script>
+
+        /** 
+         *
+         * Need to create report for account entity with name {'Account Report'}
+         * Register this output as a Custom command in the woodford on the entity form for account entity.
+         * 
+         * */
+
+        /** Global variables*/
+        const SEND_REMINDER_COMMAND_NAME = "custom_send_reminder_sms";
+		
+        /** register on command script*/
+        function onCommand() {
+            MobileCRM.UI.EntityForm.onCommand(SEND_REMINDER_COMMAND_NAME,
+                function (entityForm) {
+					var smsBody = "TEST SMS";
+					var number = entityForm.entity.properties.telephone1;
+
+					MobileCRM.Platform.sendSMS(number, smsBody, function(err) { 
+                                                   MobileCRM.bridge.alert("Error occured during onload of entity form.\n\nErr: " + reason);
+                                             }
+                                        );
+
+                },
+                true,
+                null
+            );
+        }
+		
+		
+        /** Trigger onCommand method after page is loaded. */
+        window.onload = function () {
+            onCommand();
+        }
+	</script>
+</body>
+</html>

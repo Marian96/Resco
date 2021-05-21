@@ -1,0 +1,88 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>quote</EntityName>
+    <CamelCase>Quote</CamelCase>
+    <VisualStudioProjectId>00000000-0000-0000-0000-000000000000</VisualStudioProjectId>
+    <ClassBinding/>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>name</OrderBy>
+  <SerializedBindings>
+    <string>dws_client_details</string>
+    <string>id</string>
+    <string>name</string>
+    <string>totalamount</string>
+    <string>customerid</string>
+    <string>dws_quote_number</string>
+    <string>dws_quote_total</string>
+    <string>statecode</string>
+    <string>dws_vehicle</string>
+    <string>dws_vehicle.dws_vehicle.vehiclebodytype</string>
+    <string>dws_vehicle.dws_vehicle.chassisnumber</string>
+    <string>dws_vehicle.dws_vehicle.vehiclecolour</string>
+    <string>dws_vehicle.dws_vehicle.complianceplate</string>
+    <string>dws_vehicle.dws_vehicle.manualcreation</string>
+    <string>dws_vehicle.dws_vehicle.createdon</string>
+    <string>dws_vehicle.dws_vehicle.customeraccount</string>
+    <string>dws_vehicle.dws_vehicle.enginenumber</string>
+    <string>dws_vehicle.dws_vehicle.id</string>
+    <string>dws_vehicle.dws_vehicle.vehiclemake</string>
+    <string>dws_vehicle.dws_vehicle.vehiclemodel</string>
+    <string>dws_vehicle.dws_vehicle.modifiedon</string>
+    <string>dws_vehicle.dws_vehicle.name</string>
+    <string>dws_vehicle.dws_vehicle.nevdissearchdate</string>
+    <string>dws_vehicle.dws_vehicle.quote</string>
+    <string>dws_vehicle.dws_vehicle.registrationplate</string>
+    <string>dws_vehicle.dws_vehicle.registrationstate</string>
+    <string>dws_vehicle.dws_vehicle.statecode</string>
+    <string>dws_vehicle.dws_vehicle.statuscode</string>
+    <string>dws_vehicle.dws_vehicle.vehicletype</string>
+    <string>dws_vehicle.dws_vehicle.versionnumber</string>
+    <string>dws_vehicle.dws_vehicle.vin</string>
+    <string>dws_vehicle.dws_vehicle.yearofmanufacture</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="quote">
+      <filter type="and"/>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>240</DesignWidth>
+      <DesignHeight>40</DesignHeight>
+      <Name>Default</Name>
+      <Width>240</Width>
+      <Height>69</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="name">
+          <StyleName>primary</StyleName>
+          <Bounds>8,2,142,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_quote_total">
+          <StyleName>r_currency</StyleName>
+          <Bounds>156,39,82,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="dws_quote_number">
+          <StyleName>primary</StyleName>
+          <Bounds>8,38,142,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="statecode">
+          <StyleName>r_currency</StyleName>
+          <Bounds>158,4,82,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

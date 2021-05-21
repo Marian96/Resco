@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<title>NEVDIS Information Lookup</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="initial-scale=1, user-scalable=no" />
+		<script src="JSBridge.js" type="text/javascript"></script>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				MobileCRM.UI.EntityForm.onChange(
+					function (entityForm) {
+						var changedItem = entityForm.context.changedItem;
+						if ((changedItem == "registrationplate" || changedItem == "registrationstate") && 
+							entityForm.entity.properties.registrationstate !== undefined &&
+							entityForm.entity.properties.registrationplate !== undefined && entityForm.entity.properties.registrationplate !== "" ) {
+							var regoNumber = entityForm.entity.properties.registrationplate;
+
+							// REMOVE THE FOLLOWING LINE ONCE THE FUNCTIONALITY IS READY FOR LIVE (and PAID) CALLS TO NEVDIS
+							//regoNumber = "XXXXXXXXXXXXXXXXX";
+							// END OF REMOVE 
+							
+							var regoStateFull = entityForm.entity.properties.registrationstate.primaryName;
+							var regoState = "";
+							switch (regoStateFull) {
+								case "NEW SOUTH WALES":
+								    regoState = "NSW";
+									break;
+								case "ACT":
+								    regoState = "ACT";
+									break;
+								case "NORTHERN TERRITORY":
+								    regoState = "NT";
+									break;
+								case "QUEENSLAND":
+								    regoState = "QLD";
+									break;
+								case "SOUTH AUSTRALIA":
+								    regoState = "SA";
+									break;
+								case "TASMANIA":
+								    regoState = "TAS";
+									break;
+								case "WESTERN AUSTRALIA":
+								    regoState = "WA";
+									break;
+								case "VICTORIA":
+								    regoState = "VIC";
+									break;
+								default:
+								    regoState = "";
+									break;
+							}
+							
+							var query = `query NevdisPlateSearch($regoNumber: String!, $regoState: State!) { 
+									nevdisPlateSearch_v2(plate: $regoNumber, state: $regoState) {
+										vin
+										plate {
+											number
+											state
+										}
+										make
+										model
+										blueflag_make
+										blueflag_model
+										chassis
+										engine_number
+										vehicle_type
+										body_type
+										colour
+										compliance_plate
+										year_of_manufacture
+										registration {
+											status
+											expiry_date
+										}
+									}
+								}`;
+							
+							fetch('https://ubuxgyols2.execute-api.ap-southeast-2.amazonaws.com/prod/', {
+								method: 'post',
+								headers: {
+									'Accept': '*/*',
+									'Content-Type': 'application/json',
+									'Authorization': 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiZjYwM2YyNC05YjY4LTQ3YzgtYTVkMy02MzJiYjcxMDMxMTQiLCJuYW1lIjoiU29sYm94IFB0eSBMdGQiLCJpYXQiOjE1MTYyMzkwMjJ9.MhWUzNSGmujmOYfDs_WHGqj04MFYkMAbXZefnwpjw_o',
+									'Connection': 'keep-alive'
+								},				
+								body: JSON.stringify({ 
+									query, 
+									variables: { regoNumber, regoState }
+								})
+							})
+							.then(r => r.json())
+							.then(data => {
+								if (data !== undefined && data.data !== undefined && data.data.nevdisPlateSearch_v2 !== undefined && data.data.nevdisPlateSearch_v2.length > 0) {
+									MobileCRM.UI.EntityForm.requestObject(
+      									function (entityForm) { 									
+											entityForm.entity.properties.vin = data.data.nevdisPlateSearch_v2[0].vin;
+											entityForm.entity.properties.chassisnumber = data.data.nevdisPlateSearch_v2[0].chassis;
+											entityForm.entity.properties.complianceplate = data.data.nevdisPlateSearch_v2[0].compliance_plate;
+											entityForm.entity.properties.enginenumber = data.data.nevdisPlateSearch_v2[0].engine_number;
+											entityForm.entity.properties.vehiclemake = data.data.nevdisPlateSearch_v2[0].blueflag_make;
+											entityForm.entity.properties.vehiclemodel = data.data.nevdisPlateSearch_v2[0].blueflag_model;
+											entityForm.entity.properties.vehiclebodytype = data.data.nevdisPlateSearch_v2[0].body_type;
+											entityForm.entity.properties.vehicletype = data.data.nevdisPlateSearch_v2[0].vehicle_type;
+											entityForm.entity.properties.yearofmanufacture = data.data.nevdisPlateSearch_v2[0].year_of_manufacture;
+											entityForm.entity.properties.vehiclecolour = data.data.nevdisPlateSearch_v2[0].colour;
+											entityForm.entity.properties.nevdissearchdate = new Date(); //new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString('en-AU',{hour:"numeric",minute:"numeric"});
+										},
+         								function (err) { 
+											alert(err); 
+										},
+         								null
+									);
+								}
+							})
+							.catch((error) => {
+							  console.error('Error:', error);
+							});
+						}
+					},
+					true,
+					null
+				);			
+			});
+		</script>
+	</head>
+</html>

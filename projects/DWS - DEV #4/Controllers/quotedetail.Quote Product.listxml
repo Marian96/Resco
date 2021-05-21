@@ -1,0 +1,76 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>quotedetail</EntityName>
+    <CamelCase>quotedetail</CamelCase>
+    <ClassBinding>
+      <SerializedClassBinding name="#PrimaryName" label="PrimaryName" type="String"/>
+    </ClassBinding>
+  </Attributes>
+  <Name>Quote Product</Name>
+  <Kind>AssociatedList</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>productdescription</OrderBy>
+  <SerializedBindings>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>productid</string>
+    <string>extendedamount</string>
+    <string>id</string>
+    <string>isservice</string>
+    <string>manualdiscountamount</string>
+    <string>modifiedon</string>
+    <string>priceperunit</string>
+    <string>ispriceoverridden</string>
+    <string>quantity</string>
+    <string>quoteid</string>
+    <string>isproductoverridden</string>
+    <string>tax</string>
+    <string>uomid</string>
+    <string>volumediscountamount</string>
+    <string>productdescription</string>
+    <string>is_service</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <Fetch version="1.0">
+    <entity name="quotedetail">
+      <filter type="and">
+        <condition attribute="isservice" operator="eq" value="0"/>
+      </filter>
+    </entity>
+  </Fetch>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="#PrimaryName">
+          <StyleName>primary</StyleName>
+          <Bounds>10,2,198,28</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="isservice">
+          <StyleName>gray</StyleName>
+          <Bounds>240,33,67,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="quantity">
+          <StyleName>r_gray</StyleName>
+          <Bounds>12,31,54,13</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="priceperunit">
+          <StyleName>Primary Right</StyleName>
+          <Bounds>211,3,98,28</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>
