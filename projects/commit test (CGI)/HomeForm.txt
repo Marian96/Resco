@@ -1,0 +1,1 @@
+﻿@Search,@Section;My work,@RoutePlan;;RoutePlan,@Tourplan,@activity,@Section;Overview,@Dashboard;;DashboardForm,@Map,#Other,quote,salesorder,invoice,product,##,@Section;Customers,account,contact,lead,opportunity,@Section;Settings,@Setup,@About
