@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sample Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <script src="JSBridge.js"></script>
+  </head>
+
+  <body>
+    <script>
+   window.onload = (function(){
+    MobileCRM.Application.checkUserRoles(["Marian Admin"],
+    function(result){
+        MobileCRM.bridge.alert(result);
+    },
+    function(err){
+        MobileCRM.bridge.alert(err);
+    })
+   })();
+    </script>
+  </body>
+</html>

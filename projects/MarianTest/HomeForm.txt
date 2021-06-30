@@ -1,1 +1,1 @@
-﻿@Dashboard,task,appointment,@Map,@activity,email,account,contact,lead,opportunity,quote,salesorder,product,annotation,resco_questionnaire;Inspections,@Setup,@About,@@Webpage;file://nieco.html,@@sendemail;file://emailWithAttachemnt.html
+﻿task,queue,new_gpsinfo;;<extra><views>new_gpsinfo.*:new_gpsinfo.@Default</views><actions>0;0;1</actions></extra>,account,contact,lead,opportunity,salesorder,product,email,annotation,resco_questionnaire;Inspections,@Setup,@About,@@check user;file://checkUser.html

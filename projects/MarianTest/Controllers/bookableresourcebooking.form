@@ -10,14 +10,21 @@
   </SharedVariableNames>
   <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand OnExecuteButton</EnabledWorkflows>
   <SerializedChildrenV2>
-    <FormTab xsi:type="DetailTab">
+    <FormTab xsi:type="DetailTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0">
       <Name>General</Name>
       <SerializedChildren>
         <DetailItem SchemaName="name"/>
-        <DetailItem SchemaName="msdyn_actualarrivaltime"/>
         <DetailItem SchemaName="modifiedon"/>
         <DetailItem SchemaName="bookingstatus"/>
+        <DetailItem SchemaName="starttime"/>
+        <DetailItem SchemaName="msdyn_actualarrivaltime"/>
+        <DetailItem SchemaName="endtime"/>
+        <DetailItem SchemaName="duration"/>
       </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0" DocCommands="0">
+      <Name>Time Entries List</Name>
+      <Binding SchemaName="msdyn_timeentry.msdyn_bookableresourcebooking"/>
     </FormTab>
   </SerializedChildrenV2>
 </EntityForm>

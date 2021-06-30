@@ -23,7 +23,7 @@
   </ClassBinding>
   <EnabledWorkflows>OnChangeEnabled OnSaveEnabled OnCanExecuteCommand</EnabledWorkflows>
   <SerializedChildrenV2>
-    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+    <FormTab xsi:type="DetailTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0">
       <Name>General</Name>
       <SerializedChildren>
         <DetailItem SchemaName="msdyn_name"/>
@@ -39,11 +39,15 @@
         <DetailItem SchemaName="msdyn_taxcode"/>
       </SerializedChildren>
     </FormTab>
-    <FormTab xsi:type="IFrameTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+    <FormTab xsi:type="AssociatedTab" NameModified="0" IconModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Time Entries List</Name>
+      <Binding SchemaName="msdyn_timeentry.msdyn_workorder"/>
+    </FormTab>
+    <FormTab xsi:type="IFrameTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\Web@2x.png" IsIconNameReadOnly="0">
       <Name>Web</Name>
       <Url>file://saveDirtyForm.html</Url>
     </FormTab>
-    <FormTab xsi:type="DetailTab" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+    <FormTab xsi:type="DetailTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\Address@2x.png" IsIconNameReadOnly="0">
       <Name>Address</Name>
       <SerializedChildren>
         <DetailItem SchemaName="msdyn_address1"/>
@@ -56,7 +60,7 @@
         <DetailItem SchemaName="msdyn_serviceterritory"/>
       </SerializedChildren>
     </FormTab>
-    <FormTab xsi:type="MapTab" flexiHeight="1" NameModified="0" EntityIconName="" IsIconNameReadOnly="0">
+    <FormTab xsi:type="MapTab" flexiHeight="1" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\Map@2x.png" IsIconNameReadOnly="0">
       <Name>Map</Name>
       <CoordinatesBinding>msdyn_latitude;msdyn_longitude</CoordinatesBinding>
     </FormTab>

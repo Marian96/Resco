@@ -1,4 +1,4 @@
-﻿<model version="7" publish="10000">
+﻿<model version="7" Chat="true" publish="10000">
   <entities>
     <entity schema="account">
       <properties>
@@ -20,6 +20,7 @@
         <property schema="fax"/>
         <property schema="modifiedon"/>
         <property schema="name"/>
+        <property schema="new_businessunits"/>
         <property schema="new_cleaningofpump"/>
         <property schema="new_fruits"/>
         <property schema="new_multioptionset"/>
@@ -240,18 +241,213 @@
         </index>
       </indexes>
     </entity>
+    <entity schema="bookableresource">
+      <properties>
+        <property schema="accountid"/>
+        <property schema="bookableresourceid"/>
+        <property schema="calendarid"/>
+        <property schema="contactid"/>
+        <property schema="createdby"/>
+        <property schema="createdon"/>
+        <property schema="createdonbehalfby"/>
+        <property schema="exchangerate"/>
+        <property schema="importsequencenumber"/>
+        <property schema="modifiedby"/>
+        <property schema="modifiedon"/>
+        <property schema="modifiedonbehalfby"/>
+        <property schema="msdyn_bookingstodrip"/>
+        <property schema="msdyn_crewstrategy"/>
+        <property schema="msdyn_derivecapacity"/>
+        <property schema="msdyn_displayonscheduleassistant"/>
+        <property schema="msdyn_displayonscheduleboard"/>
+        <property schema="msdyn_enabledforfieldservicemobile"/>
+        <property schema="msdyn_enabledripscheduling"/>
+        <property schema="msdyn_endlocation"/>
+        <property schema="msdyn_generictype"/>
+        <property schema="msdyn_hourlyrate"/>
+        <property schema="msdyn_hourlyrate_base"/>
+        <property schema="msdyn_internalflags"/>
+        <property schema="msdyn_latitude"/>
+        <property schema="msdyn_locationtimestamp"/>
+        <property schema="msdyn_longitude"/>
+        <property schema="msdyn_organizationalunit"/>
+        <property schema="msdyn_pooltype"/>
+        <property schema="msdyn_primaryemail"/>
+        <property schema="msdyn_startlocation"/>
+        <property schema="msdyn_targetutilization"/>
+        <property schema="msdyn_timeoffapprovalrequired"/>
+        <property schema="msdyn_warehouse"/>
+        <property schema="name"/>
+        <property schema="overriddencreatedon"/>
+        <property schema="ownerid"/>
+        <property schema="owningbusinessunit"/>
+        <property schema="owningteam"/>
+        <property schema="owninguser"/>
+        <property schema="processid"/>
+        <property schema="resourcetype"/>
+        <property schema="stageid"/>
+        <property schema="statecode"/>
+        <property schema="statuscode"/>
+        <property schema="timezone"/>
+        <property schema="timezoneruleversionnumber"/>
+        <property schema="transactioncurrencyid"/>
+        <property schema="traversedpath"/>
+        <property schema="userid"/>
+        <property schema="utcconversiontimezonecode"/>
+        <property schema="versionnumber"/>
+      </properties>
+      <indexes>
+        <index schema="idx_bookableresource_contactid" issystem="true">
+          <fields>
+            <field schema="contactid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_msdyn_organizationalunit" issystem="true">
+          <fields>
+            <field schema="msdyn_organizationalunit"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_modifiedonbehalfby" issystem="true">
+          <fields>
+            <field schema="modifiedonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_owningteam" issystem="true">
+          <fields>
+            <field schema="owningteam"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_createdonbehalfby" issystem="true">
+          <fields>
+            <field schema="createdonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_userid" issystem="true">
+          <fields>
+            <field schema="userid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_msdyn_warehouse" issystem="true">
+          <fields>
+            <field schema="msdyn_warehouse"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_calendarid" issystem="true">
+          <fields>
+            <field schema="calendarid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_transactioncurrencyid" issystem="true">
+          <fields>
+            <field schema="transactioncurrencyid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_createdby" issystem="true">
+          <fields>
+            <field schema="createdby"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_modifiedby" issystem="true">
+          <fields>
+            <field schema="modifiedby"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_accountid" issystem="true">
+          <fields>
+            <field schema="accountid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_owninguser" issystem="true">
+          <fields>
+            <field schema="owninguser"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_owningbusinessunit" issystem="true">
+          <fields>
+            <field schema="owningbusinessunit"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresource_name" issystem="true">
+          <fields>
+            <field schema="name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
     <entity schema="bookableresourcebooking">
       <properties>
         <property schema="bookableresourcebookingid"/>
         <property schema="bookingstatus"/>
+        <property schema="bookingtype"/>
+        <property schema="createdby"/>
         <property schema="createdon"/>
+        <property schema="createdonbehalfby"/>
         <property schema="duration"/>
+        <property schema="endtime"/>
+        <property schema="exchangerate"/>
+        <property schema="header"/>
+        <property schema="importsequencenumber"/>
+        <property schema="modifiedby"/>
         <property schema="modifiedon"/>
+        <property schema="modifiedonbehalfby"/>
+        <property schema="msdyn_acceptcascadecrewchanges"/>
         <property schema="msdyn_actualarrivaltime"/>
+        <property schema="msdyn_actualtravelduration"/>
+        <property schema="msdyn_agreementbookingdate"/>
+        <property schema="msdyn_allowoverlapping"/>
+        <property schema="msdyn_appointmentbookingid"/>
+        <property schema="msdyn_bookingmethod"/>
+        <property schema="msdyn_bookingsetupmetadataid"/>
+        <property schema="msdyn_cascadecrewchanges"/>
+        <property schema="msdyn_crew"/>
+        <property schema="msdyn_crewmembertype"/>
+        <property schema="msdyn_effort"/>
+        <property schema="msdyn_estimatedarrivaltime"/>
+        <property schema="msdyn_estimatedtravelduration"/>
+        <property schema="msdyn_internalflags"/>
+        <property schema="msdyn_latitude"/>
+        <property schema="msdyn_longitude"/>
+        <property schema="msdyn_milestraveled"/>
+        <property schema="msdyn_offlinetimestamp"/>
+        <property schema="msdyn_preventtimestampcreation"/>
+        <property schema="msdyn_requirementgroupid"/>
+        <property schema="msdyn_resourcegroup"/>
+        <property schema="msdyn_resourcerequirement"/>
+        <property schema="msdyn_signature"/>
+        <property schema="msdyn_slottext"/>
+        <property schema="msdyn_timegroupdetailselected"/>
+        <property schema="msdyn_totalbillableduration"/>
+        <property schema="msdyn_totalbreakduration"/>
+        <property schema="msdyn_totalcost"/>
+        <property schema="msdyn_totalcost_base"/>
+        <property schema="msdyn_totaldurationinprogress"/>
+        <property schema="msdyn_traveltimerescheduling"/>
+        <property schema="msdyn_ursinternalflags"/>
+        <property schema="msdyn_worklocation"/>
         <property schema="msdyn_workorder"/>
         <property schema="name"/>
+        <property schema="new_completioncomments"/>
+        <property schema="overriddencreatedon"/>
         <property schema="ownerid"/>
+        <property schema="owningbusinessunit"/>
+        <property schema="owningteam"/>
+        <property schema="owninguser"/>
+        <property schema="processid"/>
         <property schema="resource"/>
+        <property schema="stageid"/>
+        <property schema="starttime"/>
+        <property schema="statecode"/>
+        <property schema="statuscode"/>
+        <property schema="timezoneruleversionnumber"/>
+        <property schema="transactioncurrencyid"/>
+        <property schema="traversedpath"/>
+        <property schema="utcconversiontimezonecode"/>
+        <property schema="versionnumber"/>
       </properties>
       <indexes>
         <index schema="idx_bookableresourcebooking_resource" issystem="true">
@@ -259,9 +455,29 @@
             <field schema="resource"/>
           </fields>
         </index>
+        <index schema="idx_bookableresourcebooking_msdyn_bookingsetupmetadataid" issystem="true">
+          <fields>
+            <field schema="msdyn_bookingsetupmetadataid"/>
+          </fields>
+        </index>
         <index schema="idx_bookableresourcebooking_ownerid" issystem="true">
           <fields>
             <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_msdyn_requirementgroupid" issystem="true">
+          <fields>
+            <field schema="msdyn_requirementgroupid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_createdonbehalfby" issystem="true">
+          <fields>
+            <field schema="createdonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_modifiedonbehalfby" issystem="true">
+          <fields>
+            <field schema="modifiedonbehalfby"/>
           </fields>
         </index>
         <index schema="idx_bookableresourcebooking_bookingstatus" issystem="true">
@@ -269,9 +485,74 @@
             <field schema="bookingstatus"/>
           </fields>
         </index>
+        <index schema="idx_bookableresourcebooking_owningteam" issystem="true">
+          <fields>
+            <field schema="owningteam"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_msdyn_appointmentbookingid" issystem="true">
+          <fields>
+            <field schema="msdyn_appointmentbookingid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_header" issystem="true">
+          <fields>
+            <field schema="header"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_createdby" issystem="true">
+          <fields>
+            <field schema="createdby"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_msdyn_resourcerequirement" issystem="true">
+          <fields>
+            <field schema="msdyn_resourcerequirement"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_msdyn_agreementbookingdate" issystem="true">
+          <fields>
+            <field schema="msdyn_agreementbookingdate"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_modifiedby" issystem="true">
+          <fields>
+            <field schema="modifiedby"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_msdyn_crew" issystem="true">
+          <fields>
+            <field schema="msdyn_crew"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_owninguser" issystem="true">
+          <fields>
+            <field schema="owninguser"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_owningbusinessunit" issystem="true">
+          <fields>
+            <field schema="owningbusinessunit"/>
+          </fields>
+        </index>
         <index schema="idx_bookableresourcebooking_msdyn_workorder" issystem="true">
           <fields>
             <field schema="msdyn_workorder"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_msdyn_timegroupdetailselected" issystem="true">
+          <fields>
+            <field schema="msdyn_timegroupdetailselected"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_transactioncurrencyid" issystem="true">
+          <fields>
+            <field schema="transactioncurrencyid"/>
+          </fields>
+        </index>
+        <index schema="idx_bookableresourcebooking_msdyn_resourcegroup" issystem="true">
+          <fields>
+            <field schema="msdyn_resourcegroup"/>
           </fields>
         </index>
         <index schema="idx_bookableresourcebooking_name" issystem="true">
@@ -296,6 +577,21 @@
           </fields>
         </index>
         <index schema="idx_bookingstatus_name" issystem="true">
+          <fields>
+            <field schema="name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="businessunit">
+      <properties>
+        <property schema="businessunitid"/>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="name"/>
+      </properties>
+      <indexes>
+        <index schema="idx_businessunit_name" issystem="true">
           <fields>
             <field schema="name"/>
           </fields>
@@ -912,6 +1208,192 @@
         </index>
       </indexes>
     </entity>
+    <entity schema="list">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="listid"/>
+        <property schema="listname"/>
+        <property schema="modifiedon"/>
+        <property schema="ownerid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_list_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_list_listname" issystem="true">
+          <fields>
+            <field schema="listname"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="listmember">
+      <properties>
+        <property schema="entityid"/>
+        <property schema="listid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_listmember" issystem="true">
+          <fields>
+            <field schema="listid"/>
+            <field schema="entityid"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="msdyn_customerasset">
+      <properties>
+        <property schema="createdby"/>
+        <property schema="createdon"/>
+        <property schema="createdonbehalfby"/>
+        <property schema="importsequencenumber"/>
+        <property schema="modifiedby"/>
+        <property schema="modifiedon"/>
+        <property schema="modifiedonbehalfby"/>
+        <property schema="msdyn_account"/>
+        <property schema="msdyn_alert"/>
+        <property schema="msdyn_alertcount"/>
+        <property schema="msdyn_alertcount_date"/>
+        <property schema="msdyn_alertcount_state"/>
+        <property schema="msdyn_customerassetcategory"/>
+        <property schema="msdyn_customerassetid"/>
+        <property schema="msdyn_deviceid"/>
+        <property schema="msdyn_functionallocation"/>
+        <property schema="msdyn_lastalerttime"/>
+        <property schema="msdyn_lastalerttime_date"/>
+        <property schema="msdyn_lastalerttime_state"/>
+        <property schema="msdyn_lastcommandsent"/>
+        <property schema="msdyn_lastcommandsenttime"/>
+        <property schema="msdyn_latitude"/>
+        <property schema="msdyn_longitude"/>
+        <property schema="msdyn_masterasset"/>
+        <property schema="msdyn_name"/>
+        <property schema="msdyn_parentasset"/>
+        <property schema="msdyn_product"/>
+        <property schema="msdyn_registrationstatus"/>
+        <property schema="msdyn_workorderproduct"/>
+        <property schema="overriddencreatedon"/>
+        <property schema="ownerid"/>
+        <property schema="owningbusinessunit"/>
+        <property schema="owningteam"/>
+        <property schema="owninguser"/>
+        <property schema="statecode"/>
+        <property schema="statuscode"/>
+        <property schema="timezoneruleversionnumber"/>
+        <property schema="utcconversiontimezonecode"/>
+        <property schema="versionnumber"/>
+      </properties>
+      <indexes>
+        <index schema="idx_msdyn_customerasset_modifiedonbehalfby" issystem="true">
+          <fields>
+            <field schema="modifiedonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_owningteam" issystem="true">
+          <fields>
+            <field schema="owningteam"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_product" issystem="true">
+          <fields>
+            <field schema="msdyn_product"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_account" issystem="true">
+          <fields>
+            <field schema="msdyn_account"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_workorderproduct" issystem="true">
+          <fields>
+            <field schema="msdyn_workorderproduct"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_owninguser" issystem="true">
+          <fields>
+            <field schema="owninguser"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_createdonbehalfby" issystem="true">
+          <fields>
+            <field schema="createdonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_functionallocation" issystem="true">
+          <fields>
+            <field schema="msdyn_functionallocation"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_customerassetcategory" issystem="true">
+          <fields>
+            <field schema="msdyn_customerassetcategory"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_lastcommandsent" issystem="true">
+          <fields>
+            <field schema="msdyn_lastcommandsent"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_parentasset" issystem="true">
+          <fields>
+            <field schema="msdyn_parentasset"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_owningbusinessunit" issystem="true">
+          <fields>
+            <field schema="owningbusinessunit"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_modifiedby" issystem="true">
+          <fields>
+            <field schema="modifiedby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_createdby" issystem="true">
+          <fields>
+            <field schema="createdby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_masterasset" issystem="true">
+          <fields>
+            <field schema="msdyn_masterasset"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_customerasset_msdyn_name" issystem="true">
+          <fields>
+            <field schema="msdyn_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="msdyn_requirementgroup">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="msdyn_name"/>
+        <property schema="msdyn_requirementgroupid"/>
+        <property schema="ownerid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_msdyn_requirementgroup_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_requirementgroup_msdyn_name" issystem="true">
+          <fields>
+            <field schema="msdyn_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
     <entity schema="msdyn_resourceterritory">
       <properties>
         <property schema="createdby"/>
@@ -990,6 +1472,122 @@
         <index schema="idx_msdyn_resourceterritory_msdyn_name" issystem="true">
           <fields>
             <field schema="msdyn_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="msdyn_timeentry">
+      <properties>
+        <property schema="createdby"/>
+        <property schema="createdon"/>
+        <property schema="createdonbehalfby"/>
+        <property schema="importsequencenumber"/>
+        <property schema="modifiedby"/>
+        <property schema="modifiedon"/>
+        <property schema="modifiedonbehalfby"/>
+        <property schema="msdyn_bookableresource"/>
+        <property schema="msdyn_bookableresourcebooking"/>
+        <property schema="msdyn_bookingstatus"/>
+        <property schema="msdyn_description"/>
+        <property schema="msdyn_duration"/>
+        <property schema="msdyn_end"/>
+        <property schema="msdyn_entrystatus"/>
+        <property schema="msdyn_externaldescription"/>
+        <property schema="msdyn_internalflags"/>
+        <property schema="msdyn_start"/>
+        <property schema="msdyn_timeentryid"/>
+        <property schema="msdyn_timeentrysettingid"/>
+        <property schema="msdyn_timeoffrequest"/>
+        <property schema="msdyn_type"/>
+        <property schema="msdyn_workorder"/>
+        <property schema="overriddencreatedon"/>
+        <property schema="ownerid"/>
+        <property schema="owningbusinessunit"/>
+        <property schema="owningteam"/>
+        <property schema="owninguser"/>
+        <property schema="processid"/>
+        <property schema="stageid"/>
+        <property schema="statecode"/>
+        <property schema="statuscode"/>
+        <property schema="timezoneruleversionnumber"/>
+        <property schema="traversedpath"/>
+        <property schema="utcconversiontimezonecode"/>
+        <property schema="versionnumber"/>
+      </properties>
+      <indexes>
+        <index schema="idx_msdyn_timeentry_modifiedonbehalfby" issystem="true">
+          <fields>
+            <field schema="modifiedonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_owningteam" issystem="true">
+          <fields>
+            <field schema="owningteam"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_msdyn_timeentrysettingid" issystem="true">
+          <fields>
+            <field schema="msdyn_timeentrysettingid"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_msdyn_bookableresource" issystem="true">
+          <fields>
+            <field schema="msdyn_bookableresource"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_createdonbehalfby" issystem="true">
+          <fields>
+            <field schema="createdonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_owninguser" issystem="true">
+          <fields>
+            <field schema="owninguser"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_msdyn_workorder" issystem="true">
+          <fields>
+            <field schema="msdyn_workorder"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_msdyn_timeoffrequest" issystem="true">
+          <fields>
+            <field schema="msdyn_timeoffrequest"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_owningbusinessunit" issystem="true">
+          <fields>
+            <field schema="owningbusinessunit"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_modifiedby" issystem="true">
+          <fields>
+            <field schema="modifiedby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_createdby" issystem="true">
+          <fields>
+            <field schema="createdby"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_msdyn_bookableresourcebooking" issystem="true">
+          <fields>
+            <field schema="msdyn_bookableresourcebooking"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_msdyn_bookingstatus" issystem="true">
+          <fields>
+            <field schema="msdyn_bookingstatus"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_msdyn_timeentry_msdyn_description" issystem="true">
+          <fields>
+            <field schema="msdyn_description"/>
           </fields>
         </index>
       </indexes>
@@ -1341,6 +1939,78 @@
         </index>
       </indexes>
     </entity>
+    <entity schema="new_gpsinfo">
+      <properties>
+        <property schema="createdby"/>
+        <property schema="createdon"/>
+        <property schema="createdonbehalfby"/>
+        <property schema="importsequencenumber"/>
+        <property schema="modifiedby"/>
+        <property schema="modifiedon"/>
+        <property schema="modifiedonbehalfby"/>
+        <property schema="new_gpsinfoid"/>
+        <property schema="new_latitude"/>
+        <property schema="new_longitude"/>
+        <property schema="new_name"/>
+        <property schema="overriddencreatedon"/>
+        <property schema="ownerid"/>
+        <property schema="owningbusinessunit"/>
+        <property schema="owningteam"/>
+        <property schema="owninguser"/>
+        <property schema="statecode"/>
+        <property schema="statuscode"/>
+        <property schema="timezoneruleversionnumber"/>
+        <property schema="utcconversiontimezonecode"/>
+        <property schema="versionnumber"/>
+      </properties>
+      <indexes>
+        <index schema="idx_new_gpsinfo_modifiedonbehalfby" issystem="true">
+          <fields>
+            <field schema="modifiedonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_owningteam" issystem="true">
+          <fields>
+            <field schema="owningteam"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_owninguser" issystem="true">
+          <fields>
+            <field schema="owninguser"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_createdonbehalfby" issystem="true">
+          <fields>
+            <field schema="createdonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_owningbusinessunit" issystem="true">
+          <fields>
+            <field schema="owningbusinessunit"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_modifiedby" issystem="true">
+          <fields>
+            <field schema="modifiedby"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_createdby" issystem="true">
+          <fields>
+            <field schema="createdby"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_new_gpsinfo_new_name" issystem="true">
+          <fields>
+            <field schema="new_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
     <entity schema="opportunity">
       <properties>
         <property schema="actualclosedate"/>
@@ -1620,6 +2290,130 @@
         <index schema="idx_productpricelevel_uomid" issystem="true">
           <fields>
             <field schema="uomid"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="queue">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="name"/>
+        <property schema="ownerid"/>
+        <property schema="queueid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_queue_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_queue_name" issystem="true">
+          <fields>
+            <field schema="name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="queueitem">
+      <properties>
+        <property schema="createdby"/>
+        <property schema="createdon"/>
+        <property schema="createdonbehalfby"/>
+        <property schema="enteredon"/>
+        <property schema="exchangerate"/>
+        <property schema="importsequencenumber"/>
+        <property schema="modifiedby"/>
+        <property schema="modifiedon"/>
+        <property schema="modifiedonbehalfby"/>
+        <property schema="objectid"/>
+        <property schema="objecttypecode"/>
+        <property schema="organizationid"/>
+        <property schema="overriddencreatedon"/>
+        <property schema="ownerid"/>
+        <property schema="owningbusinessunit"/>
+        <property schema="owninguser"/>
+        <property schema="priority"/>
+        <property schema="queueid"/>
+        <property schema="queueitemid"/>
+        <property schema="sender"/>
+        <property schema="state"/>
+        <property schema="statecode"/>
+        <property schema="status"/>
+        <property schema="statuscode"/>
+        <property schema="timezoneruleversionnumber"/>
+        <property schema="title"/>
+        <property schema="torecipients"/>
+        <property schema="transactioncurrencyid"/>
+        <property schema="utcconversiontimezonecode"/>
+        <property schema="versionnumber"/>
+        <property schema="workerid"/>
+        <property schema="workeridmodifiedon"/>
+      </properties>
+      <indexes>
+        <index schema="idx_queueitem_modifiedonbehalfby" issystem="true">
+          <fields>
+            <field schema="modifiedonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_objectid" issystem="true">
+          <fields>
+            <field schema="objectid"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_owninguser" issystem="true">
+          <fields>
+            <field schema="owninguser"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_createdonbehalfby" issystem="true">
+          <fields>
+            <field schema="createdonbehalfby"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_transactioncurrencyid" issystem="true">
+          <fields>
+            <field schema="transactioncurrencyid"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_owningbusinessunit" issystem="true">
+          <fields>
+            <field schema="owningbusinessunit"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_queueid" issystem="true">
+          <fields>
+            <field schema="queueid"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_workerid" issystem="true">
+          <fields>
+            <field schema="workerid"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_modifiedby" issystem="true">
+          <fields>
+            <field schema="modifiedby"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_createdby" issystem="true">
+          <fields>
+            <field schema="createdby"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_organizationid" issystem="true">
+          <fields>
+            <field schema="organizationid"/>
+          </fields>
+        </index>
+        <index schema="idx_queueitem_title" issystem="true">
+          <fields>
+            <field schema="title"/>
           </fields>
         </index>
       </indexes>
@@ -2014,6 +2808,151 @@
         <index schema="idx_quotedetail_quotedetailname" issystem="true">
           <fields>
             <field schema="quotedetailname"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="resco_chatcomment">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="ownerid"/>
+        <property schema="resco_chatcommentid"/>
+        <property schema="resco_chatpostid"/>
+        <property schema="resco_chatuserid"/>
+        <property schema="resco_createdon"/>
+        <property schema="resco_name"/>
+        <property schema="resco_text"/>
+      </properties>
+      <indexes>
+        <index schema="idx_resco_chatcomment_resco_chatuserid" issystem="true">
+          <fields>
+            <field schema="resco_chatuserid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chatcomment_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chatcomment_resco_chatpostid" issystem="true">
+          <fields>
+            <field schema="resco_chatpostid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chatcomment_resco_name" issystem="true">
+          <fields>
+            <field schema="resco_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="resco_chatpost">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="ownerid"/>
+        <property schema="resco_chatpostid"/>
+        <property schema="resco_chattopicid"/>
+        <property schema="resco_chatuserid"/>
+        <property schema="resco_createdon"/>
+        <property schema="resco_modifiedon"/>
+        <property schema="resco_name"/>
+        <property schema="resco_text"/>
+      </properties>
+      <indexes>
+        <index schema="idx_resco_chatpost_resco_chatuserid" issystem="true">
+          <fields>
+            <field schema="resco_chatuserid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chatpost_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chatpost_resco_chattopicid" issystem="true">
+          <fields>
+            <field schema="resco_chattopicid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chatpost_resco_name" issystem="true">
+          <fields>
+            <field schema="resco_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="resco_chatpost_chatuser">
+      <properties>
+        <property schema="resco_chatpostid"/>
+        <property schema="resco_chatuserid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_resco_chatpost_chatuser" issystem="true">
+          <fields>
+            <field schema="resco_chatpostid"/>
+            <field schema="resco_chatuserid"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="resco_chattopic">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="ownerid"/>
+        <property schema="resco_chattopicid"/>
+        <property schema="resco_name"/>
+        <property schema="resco_regardingobjectentity"/>
+        <property schema="resco_regardingobjectid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_resco_chattopic_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chattopic_resco_name" issystem="true">
+          <fields>
+            <field schema="resco_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="resco_chattopic_chatuser">
+      <properties>
+        <property schema="resco_chattopicid"/>
+        <property schema="resco_chatuserid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_resco_chattopic_chatuser" issystem="true">
+          <fields>
+            <field schema="resco_chattopicid"/>
+            <field schema="resco_chatuserid"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
+    <entity schema="resco_chatuser">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="ownerid"/>
+        <property schema="resco_chatuserid"/>
+        <property schema="resco_name"/>
+        <property schema="resco_userentity"/>
+        <property schema="resco_userid"/>
+      </properties>
+      <indexes>
+        <index schema="idx_resco_chatuser_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_chatuser_resco_name" issystem="true">
+          <fields>
+            <field schema="resco_name"/>
           </fields>
         </index>
       </indexes>
@@ -2541,6 +3480,29 @@
         </index>
       </indexes>
     </entity>
+    <entity schema="resco_usersettings">
+      <properties>
+        <property schema="createdon"/>
+        <property schema="modifiedon"/>
+        <property schema="ownerid"/>
+        <property schema="resco_kind"/>
+        <property schema="resco_name"/>
+        <property schema="resco_usersettingsid"/>
+        <property schema="resco_value"/>
+      </properties>
+      <indexes>
+        <index schema="idx_resco_usersettings_ownerid" issystem="true">
+          <fields>
+            <field schema="ownerid"/>
+          </fields>
+        </index>
+        <index schema="idx_resco_usersettings_resco_name" issystem="true">
+          <fields>
+            <field schema="resco_name"/>
+          </fields>
+        </index>
+      </indexes>
+    </entity>
     <entity schema="resource">
       <properties>
         <property schema="businessunitid"/>
@@ -2854,13 +3816,21 @@
     </entity>
     <entity schema="systemuser">
       <properties>
+        <property schema="accessmode"/>
+        <property schema="businessunitid"/>
         <property schema="createdon"/>
         <property schema="fullname"/>
         <property schema="internalemailaddress"/>
+        <property schema="isdisabled"/>
         <property schema="modifiedon"/>
         <property schema="systemuserid"/>
       </properties>
       <indexes>
+        <index schema="idx_systemuser_businessunitid" issystem="true">
+          <fields>
+            <field schema="businessunitid"/>
+          </fields>
+        </index>
         <index schema="idx_systemuser_fullname" issystem="true">
           <fields>
             <field schema="fullname"/>

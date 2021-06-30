@@ -1,6 +1,6 @@
-// v13.1
+// v14.0
 (function () {
-	var _scriptVersion = 13.1;
+	var _scriptVersion = 14.10
 	// Private objects & functions
 	var _inherit = (function () {
 		function _() { }
@@ -920,8 +920,8 @@
 				},
 				DocumentService: function () {
 					/// <summary>[v8.1] Represents a service for acquiring the documents.</summary>
-					/// <field name="maxImageSize" type="Number">Gets or sets the maximum captured image size. If captured image size is greater, the image is resized to specified maximum size.</field>
-					/// <field name="recordQuality" type="Number">Gets or sets the record quality for audio/video recordings.</field>
+					/// <field name="maxImageSize" type="String">Gets or sets the maximum captured image size. If captured image size is greater, the image is resized to specified maximum size [640x480,1024x768,1600x1200,2048x1536,2592x1936 ].</field>
+					/// <field name="recordQuality" type="String">Gets or sets the record quality for audio/video recordings [Low, Medium, High].</field>
 					/// <field name="allowChooseVideo" type="Boolean">Indicates whether the video files should be included into the image picker when selecting the photos. The default is true.</field>
 					/// <field name="allowMultipleFiles" type="Boolean">Indicates whether to allow multiple files for DocumentActions SelectPhoto and SelectFile.[Not implemented on iOS.]</field>
 					/// <field name="allowCancelHandler" type="Boolean">Indicates whether to allow handling of cancel event. Callback will pass the null argument in this case.</field>
@@ -3002,7 +3002,15 @@
 	    	/// <param name="scope" type="">A scope for calling the callbacks; set &quot;null&quot; to call the callbacks in global scope.</param>
 
 	    	MobileCRM.bridge.command("GetAccessToken", JSON.stringify({ resource: resourceUrl }), successCallback, failureCallback, scope);
-	    };
+		};
+
+		MobileCRM.Application.getLastSignificantTimeChange = function (success, failed, scope) {
+			/// <summary>[v13.3.1] Gets the last detected time change.</summary>
+	        /// <param name="success" type="function()">A callback function which is called in case of success. Callback will receive an object with &quot;lastChange&quot date and &quot;delta&quot; time in sceonds.</summary> </param>
+	        /// <param name="failed" type="function(error)">A callback function for command failure. The <b>error</b> argument will carry the error message.</param>
+	        /// <param name="scope" type="">A scope for calling the callbacks; set &quot;null&quot; to call the callbacks in global scope.</param>
+			MobileCRM.bridge.command("getLastSignificantTimeChange", null, success, failed);
+		};
 
 		MobileCRM.Integration.getOAuthAccessToken = function (configurationName, oauthSettings, prompt, successCallback, failureCallback, scope) {
 			/// <summary>[12.3]Asynchronously gets the token using passed OAuth settings and parameters. Configuration name is used to find already settings.</summary>
@@ -4066,6 +4074,8 @@
 	        /// <param name="saveImmediately" type="Boolean">Indicates whether to save entity immediately or whether to just make it dirty.</param>
 	        /// <param name="errorCallback" type="function(errorMsg)">The errorCallback which is called asynchronously in case of error.</param>
 	        /// <param name="scope" type="Object">The scope for callback.</param>
+			editValue = (typeof editValue) === "object" ? JSON.stringify(editValue) : editValue;
+
 	        MobileCRM.bridge.invokeMethodAsync("EntityList", "FinishListEditByName", [rowIndex, propertyName, editValue, saveImmediately ? MobileCRM.UI.EntityListCellAction.DirectEdit : 0], null, errorCallback, scope);
 	    };
 	    MobileCRM.UI.EntityList.startEditCell = function (rowIndex, cellIndex, saveImmediately, binding, errorCallback, scope) {
@@ -4899,8 +4909,9 @@
 	            data._inCallback = true;
 	            var result = '';
 	            if (_callHandlers(handlers, data) != false) {
-	                var changed = data.getChanged();
-	                result = JSON.stringify(changed);
+					var changed = data.getChanged() || {};
+					changed.context = context;
+					result = JSON.stringify(changed);
 	            }
 	            data._inCallback = false;
 	            return result;
@@ -5221,6 +5232,20 @@
 			/// <param name="scope" type="Object">The scope for callbacks.</param>
 			this._executeAction(0x1000000, callback, errorCallback, scope);
 		};
+		MobileCRM.Services.DocumentService.prototype.loadFrom = function (callback, errorCallback, scope) {
+			/// <summary>[13.3.4]Asks the user to choose a file and calls the async callback with file info.</summary>
+			/// <param name="callback" type="function(MobileCRM.Services.FileInfo)">The callback function which is called asynchronously with <see cref="MobileCRM.Services.FileInfo">MobileCRM.Services.FileInfo</see> object as an argument.</param>
+			/// <param name="errorCallback" type="function(errorMsg)">The errorCallback which is called in case of error.</param>
+			/// <param name="scope" type="Object">The scope for callbacks.</param>
+			this._executeAction(0x0080, callback, errorCallback, scope);
+		};
+		MobileCRM.Services.DocumentService.prototype.loadFromMultiple = function (callback, errorCallback, scope) {
+			/// <summary>[13.3.4]Asks the user to choose a multiple files and calls the async callback with file info.</summary>
+			/// <param name="callback" type="function(MobileCRM.Services.FileInfo)">The callback function which is called asynchronously with <see cref="MobileCRM.Services.FileInfo">MobileCRM.Services.FileInfo</see> object as an argument.</param>
+			/// <param name="errorCallback" type="function(errorMsg)">The errorCallback which is called in case of error.</param>
+			/// <param name="scope" type="Object">The scope for callbacks.</param>
+			this._executeAction(0x2000000, callback, errorCallback, scope);
+		};
 	    MobileCRM.Services.DocumentService.prototype.print = function (filePath, landscape, errorCallback, scope) {
 	        /// <summary>[v9.1] Prints the document defined by file path.</summary>
 	        /// <param name="filePath" type="String">A file path.</param>
@@ -5527,20 +5552,34 @@
                 responseEncoding: this.responseEncoding
 		    };
 
-
 		    if (this._encoding === "Binary") {
 		        if (this._body && this._body.constructor == Blob) {
 		            var reader = new FileReader();
 		            reader.addEventListener("loadend", function (res) {
 		                data.body = this.result.split(',')[1];
 		                data.encoding = "Base64";
-		                MobileCRM.bridge.command("sendHttpRequest", JSON.stringify(data), callback, null, scope);
+						MobileCRM.bridge.command("sendHttpRequest", JSON.stringify(data), callback, null, scope);
 		            });
 		            reader.readAsDataURL(this._body);
 		        }
 		    }
 		    else
-		        MobileCRM.bridge.command("sendHttpRequest", JSON.stringify(data), callback, null, scope);
+				MobileCRM.bridge.command("sendHttpRequest", JSON.stringify(data), callback, null, scope);
+		};
+		MobileCRM.Services.HttpWebRequest.prototype.sendAsync = function (url) {
+			/// <summary>[v13.3] Allow to send http web request against an HTTP server.</summary>
+			/// <param name="url" type="String">The Url of server where HTTP request will be sent.</param>
+			/// <returns type="Promise&lt;IWebResponse&gt;">A Promise object which is asynchronously resolved with the web response object, or rejected with the web response object, where responseText contains error message.</returns>
+
+			var _this = this;
+			return new Promise(function (resolve, reject) {
+				_this.send(url, function (response) {
+					if (response["isFailure"])
+						reject(response);
+					else
+						resolve(response);
+				});
+			});
 		};
 		MobileCRM.Services.HttpWebRequest.prototype.setBody = function (body, encoding) {
 		    /// <summary>[v11.0] Set content body of http web request.</summary>
@@ -5602,11 +5641,11 @@
 				window.addEventListener("message", receiveMessageFromWebClient, false);
 	
 				function receiveMessageFromWebClient(event) {
-					var data = event.data;
+					var data = (typeof event.data === 'string' ? event.data : null);
 					//alert("JSB: " + data);
 					try {
 						// process invokescript method
-						if (data.indexOf("eval") === 0) {
+						if (data && data.indexOf("eval") === 0) {
 							var index = data.indexOf(":");
 							if (index >= 0) {
 								var evalCode = data.substr(index + 1);
@@ -5622,7 +5661,7 @@
 						}
 					}
 					catch (ex) {
-						alert("JSBridge on Webclient exception: " + ex);
+						MobileCRM.bridge.alert("JSBridge on Webclient exception: " + ex);
 						console.log(ex);
 					}
 				}
