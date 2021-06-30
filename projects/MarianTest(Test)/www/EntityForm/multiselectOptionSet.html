@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Empty Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <script src="../JSBridge.js"></script>
+</head>
+
+<body onload="getValue()">
+    <script>
+        function getValue() {
+
+            MobileCRM.UI.EntityForm.onChange(
+                function(entityForm) {
+                    // First check whether the change handler is called due to desired item change
+                    var changedItem = entityForm.context.changedItem;
+                    if (changedItem == "new_multioption") {
+                        MobileCRM.bridge.alert(changedItem.toString())
+                            // Get desired DetailView and its items
+                            // var detailView = entityForm.getDetailView("General");
+                            // var firstNameItem = detailView.getItemByName("firstname");
+                            // var lastNameItem = detailView.getItemByName("lastname");
+                            // // Now get edited entity and set its property to the combination of detail items values
+                            // var editedEntity = entityForm.entity;
+                            // editedEntity.properties.fullname = firstNameItem.value + " " + lastNameItem.value;
+                    }
+                },
+                true,
+                null
+            )
+        }
+    </script>
+</body>
+
+</html>

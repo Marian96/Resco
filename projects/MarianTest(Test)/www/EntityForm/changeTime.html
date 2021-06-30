@@ -1,0 +1,77 @@
+<html>
+
+<head>
+
+    <!-- Activate IE9 document mode, if available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Defined iOS viewport -->
+    <script type="text/javascript" src="../JSBridge.js"></script>
+</head>
+
+<body>
+
+
+    <script>
+        window.onload = function() {
+
+            MobileCRM.UI.EntityForm.requestObject(
+                function(entityForm) {
+                    var entity = entityForm.entity;
+
+                    var bookableResourceBookingId = entity.properties["msdyn_bookableresourcebooking"].id;
+                    var bookableResourceBookingName = entity.properties["msdyn_bookableresourcebooking"].primaryName;
+                    var starttime = entity.properties.msdyn_start;
+                    var endtime = entity.properties.msdyn_end;
+                    if (entity.isNew = true) {
+                        FetchAllTimeEntries(bookableResourceBookingId);
+
+                    }
+                    return true;
+                },
+                function(err) {
+                    MobileCRM.bridge.alert("An error occurred: " + err);
+                },
+                null
+            );
+
+        }
+
+
+
+
+
+
+
+
+
+        function FetchAllTimeEntries(bookableResourceID) {
+
+            idGlobal = bookableResourceID;
+            var report = new MobileCRM.FetchXml.Entity("msdyn_timeentry");
+
+            report.addAttributes();
+            report.filter.where("msdyn_bookableresourcebooking", "eq", bookableResourceID);
+
+            var tempEndtime = endtime;
+            var fetch = new MobileCRM.FetchXml.Fetch(report);
+            fetch.execute("DynamicEntities", function(res) {
+                /// <param name='res' type='Array'>Array of results carrying resco_data field value.</param>
+                if (res.length > 0) {
+                    var maxDate = new Date(1995, 1, 1)
+                    for (entity in res) {
+                        if (entity.properties.msdyn_end > maxDate) {
+                            maxDate = entity.properties.msdyn_end;
+                        }
+                    }
+                    var hours = maxDate.getHours();
+                    MobileCRM.bridge.alert(hours);
+                }
+
+            }, MobileCRM.bridge.alert, null);
+
+        }
+    </script>
+
+</body>
+
+</html>

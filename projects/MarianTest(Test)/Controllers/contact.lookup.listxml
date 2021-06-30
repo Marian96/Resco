@@ -1,0 +1,39 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>contact</EntityName>
+    <CamelCase>contact</CamelCase>
+  </Attributes>
+  <Name>lookup</Name>
+  <Kind>LookupList</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>fullname</OrderBy>
+  <SerializedBindings>
+    <string>contactid</string>
+    <string>firstname</string>
+    <string>lastname</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="firstname">
+          <StyleName>primary</StyleName>
+          <Bounds>4,5,118,21</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="lastname">
+          <StyleName>primary</StyleName>
+          <Bounds>131,5,147,22</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

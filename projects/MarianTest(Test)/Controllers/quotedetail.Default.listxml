@@ -1,0 +1,145 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>quotedetail</EntityName>
+    <CamelCase>QuoteDetail</CamelCase>
+    <WrapperClass>MobileCrm.Model.QuoteDetail</WrapperClass>
+    <VisualStudioProjectId>c0f71827-e4f6-464e-a71d-c36687d5738e</VisualStudioProjectId>
+    <ClassBinding>
+      <SerializedClassBinding name="#Amount" label="Amount" type="String"/>
+      <SerializedClassBinding name="#ExtendedAmountLabel" label="ExtendedAmountLabel" type="String"/>
+      <SerializedClassBinding name="#IsEditable" label="IsEditable" type="String"/>
+      <SerializedClassBinding name="#PricePerUnitLabel" label="PricePerUnitLabel" type="String"/>
+      <SerializedClassBinding name="#PrimaryName" label="PrimaryName" type="String"/>
+      <SerializedClassBinding name="#ProductPriceLevel" label="ProductPriceLevel" type="String"/>
+      <SerializedClassBinding name="#Quote" label="Quote" type="String"/>
+    </ClassBinding>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy/>
+  <MultiSelectCommands>Delete||</MultiSelectCommands>
+  <SerializedBindings>
+    <string>quantity</string>
+    <string>quotedetailid</string>
+    <string>msdyn_agreement</string>
+    <string>baseamount</string>
+    <string>baseamount_base</string>
+    <string>productassociationid</string>
+    <string>createdby</string>
+    <string>createdonbehalfby</string>
+    <string>createdon</string>
+    <string>transactioncurrencyid</string>
+    <string>description</string>
+    <string>msdyn_duration</string>
+    <string>msdyn_enddate</string>
+    <string>msdyn_estimatedmargin</string>
+    <string>msdyn_estimatedcost</string>
+    <string>msdyn_estimatedcost_base</string>
+    <string>msdyn_estimatedrevenue</string>
+    <string>msdyn_estimatedrevenue_base</string>
+    <string>exchangerate</string>
+    <string>productid</string>
+    <string>extendedamount</string>
+    <string>extendedamount_base</string>
+    <string>shipto_freighttermscode</string>
+    <string>importsequencenumber</string>
+    <string>msdyn_importdetailsfromagreement</string>
+    <string>lineitemnumber</string>
+    <string>msdyn_linetype</string>
+    <string>manualdiscountamount</string>
+    <string>manualdiscountamount_base</string>
+    <string>modifiedby</string>
+    <string>modifiedonbehalfby</string>
+    <string>modifiedon</string>
+    <string>quotedetailname</string>
+    <string>ownerid</string>
+    <string>owningbusinessunit</string>
+    <string>owningteam</string>
+    <string>owninguser</string>
+    <string>parentbundleid</string>
+    <string>parentbundleidref</string>
+    <string>ispriceoverridden</string>
+    <string>priceperunit</string>
+    <string>priceperunit_base</string>
+    <string>pricingerrorcode</string>
+    <string>productname</string>
+    <string>productnumber</string>
+    <string>producttypecode</string>
+    <string>propertyconfigurationstatus</string>
+    <string>quoteid</string>
+    <string>quotestatecode</string>
+    <string>overriddencreatedon</string>
+    <string>requestdeliveryby</string>
+    <string>msdyn_salestaxcode</string>
+    <string>salesrepid</string>
+    <string>isproductoverridden</string>
+    <string>sequencenumber</string>
+    <string>msdyn_serviceaccount</string>
+    <string>msdyn_serviceterritory</string>
+    <string>msdyn_pricelist</string>
+    <string>willcall</string>
+    <string>shipto_addressid</string>
+    <string>shipto_city</string>
+    <string>shipto_contactname</string>
+    <string>shipto_country</string>
+    <string>shipto_fax</string>
+    <string>shipto_name</string>
+    <string>shipto_telephone</string>
+    <string>shipto_stateorprovince</string>
+    <string>shipto_line1</string>
+    <string>shipto_line2</string>
+    <string>shipto_line3</string>
+    <string>shipto_postalcode</string>
+    <string>skippricecalculation</string>
+    <string>msdyn_startdate</string>
+    <string>tax</string>
+    <string>tax_base</string>
+    <string>msdyn_taxable</string>
+    <string>timezoneruleversionnumber</string>
+    <string>uomid</string>
+    <string>utcconversiontimezonecode</string>
+    <string>versionnumber</string>
+    <string>volumediscountamount</string>
+    <string>volumediscountamount_base</string>
+    <string>productdescription</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>240</DesignWidth>
+      <DesignHeight>40</DesignHeight>
+      <Name>Default</Name>
+      <Width>240</Width>
+      <Height>40</Height>
+      <Buttons>Delete</Buttons>
+      <SerializedChildren>
+        <CellTemplate SchemaName="#PrimaryName">
+          <StyleName>primary</StyleName>
+          <Bounds>8,2,142,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="#ExtendedAmountLabel">
+          <StyleName>r_currency</StyleName>
+          <Bounds>150,2,82,24</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="quantity">
+          <StyleName>gray_num</StyleName>
+          <Bounds>8,26,100,11</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>13</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="#PricePerUnitLabel">
+          <StyleName>r_gray_currency</StyleName>
+          <Bounds>126,26,106,11</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+  <CustomProperties/>
+</EntityList>

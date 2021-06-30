@@ -1,0 +1,39 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>systemuser</EntityName>
+    <CamelCase>systemuser</CamelCase>
+  </Attributes>
+  <Name>Default</Name>
+  <Kind>LookupList</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>fullname</OrderBy>
+  <SerializedBindings>
+    <string>fullname</string>
+    <string>internalemailaddress</string>
+    <string>systemuserid</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>41</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="internalemailaddress">
+          <StyleName>primary</StyleName>
+          <Bounds>151,3,168,35</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>9</Anchor>
+        </CellTemplate>
+        <CellTemplate SchemaName="fullname">
+          <StyleName>primary</StyleName>
+          <Bounds>0,3,148,35</Bounds>
+          <CellKind>0</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

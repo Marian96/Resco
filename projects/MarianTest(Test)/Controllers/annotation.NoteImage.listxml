@@ -1,0 +1,33 @@
+﻿<EntityList>
+  <Attributes>
+    <EntityName>annotation</EntityName>
+    <CamelCase>annotation</CamelCase>
+  </Attributes>
+  <Name>NoteImage</Name>
+  <Kind>List</Kind>
+  <AutoWideWidth>0</AutoWideWidth>
+  <OrderBy>subject</OrderBy>
+  <SerializedBindings>
+    <string>annotationid</string>
+    <string>subject</string>
+  </SerializedBindings>
+  <MaxColumns>0</MaxColumns>
+  <SerializedTemplates>
+    <RowTemplate>
+      <DesignWidth>320</DesignWidth>
+      <DesignHeight>48</DesignHeight>
+      <Name>Default</Name>
+      <Width>320</Width>
+      <Height>48</Height>
+      <SerializedChildren>
+        <CellTemplate SchemaName="img">
+          <IsConstant>true</IsConstant>
+          <StyleName>Note</StyleName>
+          <Bounds>0,0,69,48</Bounds>
+          <CellKind>1</CellKind>
+          <Anchor>5</Anchor>
+        </CellTemplate>
+      </SerializedChildren>
+    </RowTemplate>
+  </SerializedTemplates>
+</EntityList>

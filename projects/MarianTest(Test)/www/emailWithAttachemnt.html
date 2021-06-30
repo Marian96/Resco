@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Offline HTML page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <script src="JSBridge.js"></script>
+</head>
+
+<body>
+
+
+    <script>
+        window.onload = newEmail();
+
+
+        function newEmail() {
+
+            var entity = new MobileCRM.FetchXml.Entity("annotation");
+            entity.addAttribute("annotationid");
+            entity.addAttribute("subject");
+            entity.addAttribute("objectid");
+            var filter = new MobileCRM.FetchXml.Filter();
+            filter.where("subject", "eq", "Note created on 3/24/2020 10:14 AM");
+            entity.filter = filter
+            var fetch = new MobileCRM.FetchXml.Fetch(entity);
+            fetch.execute(
+                "DynamicEntities", // Take the results as an array of arrays with field values
+                      
+                function(result) {         
+                    if (typeof(result) != "undefined") {            
+                        for (var i in result) {               
+                            var dynamicEntity = result[0];
+                            var anId = dynamicEntity.properties.annotationid
+                            var regarding = dynamicEntity.properties.objectid;
+                            // MobileCRM.DynamicEntity.loadDocumentBody("annotation", anId, function(base64str) {
+                            /// <param name='base64str' type='String'>parameter contains a string with base64-encoded attachment data.</param>
+                            //MobileCRM.bridge.alert("Base64String: \n\n" + base64str);
+
+                            MobileCRM.UI.FormManager.showNewDialog(
+                                "email",
+                                null, {
+                                    "@initialize": { // force the form to pre-fill certain fields
+                                        description: "Nazdar"
+                                    }
+                                    // These props will be passed to all iFrames on the contact form which is being opened
+
+                                }
+                            );
+
+
+                            // }, MobileCRM.bridge.alert, null);            
+                        }
+                    }
+                },
+                function(err) {
+                    MobileCRM.bridge.alert("Error fetching accounts: " + err);
+                },
+                null
+            );
+
+
+        }
+    </script>
+
+</body>
+
+</html>

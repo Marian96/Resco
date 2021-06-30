@@ -1,0 +1,317 @@
+<html>
+
+<head>
+
+    <!-- Activate IE9 document mode, if available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Defined iOS viewport -->
+    <script type="text/javascript" src="../JSBridge.js"></script>
+</head>
+
+<body>
+
+
+    <script>
+        var isOnline = false;
+
+
+
+        var bookableResourceBookingId = null;
+        var idGlobal;
+        var saveHandler = null;
+        MobileCRM.UI.EntityForm.onSave(
+            function(entityForm) {
+
+                var entity = entityForm.entity;
+                debugger;
+                var bookableResourceBookingId = entity.properties["msdyn_bookableresourcebooking"].id;
+                var bookableResourceBookingName = entity.properties["msdyn_bookableresourcebooking"].primaryName;
+                var starttime = entity.properties.msdyn_start;
+                var endtime = entity.properties.msdyn_end;
+
+                //Funktionstest fetch.execute
+                debugger;
+                var report = new MobileCRM.FetchXml.Entity("bookableresourcebooking");
+
+                report.addAttributes();
+                report.filter = new MobileCRM.FetchXml.Filter();
+
+                report.filter.where("bookableresourcebookingid", "eq", bookableResourceBookingId);
+
+                var tempEndtime = endtime;
+                var fetch = new MobileCRM.FetchXml.Fetch(report);
+                saveHandler = entityForm.suspendSave();
+
+                fetch.execute("DynamicEntities", function(res) {
+                    /// <param name='res' type='Array'>Array of results carrying resco_data field value.</param>
+                    if (res.length > 0) {
+                        MobileCRM.bridge.alert("je to tu" + res[0].properties.name);
+                        var typ = entity.properties.msdyn_type;
+                        //var bbRef = props.msdyn_bookableresourcebooking;
+                        //var buchbareRR_Ref = new MobileCRM.Reference("BookableResource", props.msdyn_bookableresourcebooking.id, props.msdyn_bookableresourcebooking.toString());  
+                        debugger;
+                        //alle timeentries holen 
+                        if (typ == 192350000 /* Arbeiten */ ) {
+                            //set tszeit und endzeit
+                            FetchAllTimeEntries(bookableResourceBookingId, starttime, endtime);
+                        } else if (typ == 192355001 /* Reise */ ) {
+                            //Set startzeit und Endzeit 
+                            CheckIfReiseEntryIsStored(bookableResourceBookingId, starttime, endtime);
+                            //updateBookableResourceBookingReise(bookableResourceBookingId, starttime,endtime);
+                        }
+
+                    } else if (res.length == 0) {
+                        MobileCRM.bridge.alert("Nastal nejaky problem")
+                    }
+                }, MobileCRM.bridge.alert, null);
+                //Funktionstest fetch.execute ENDE
+
+
+
+
+
+                return true;
+                // Return false to ignore all changes
+                //return false;
+            },
+            true,
+            null
+        );
+
+
+        function updateBookableResourceBookingReise(bookableResourceBookingId, starttime, endtime) {
+            idGlobal = bookableResourceBookingId;
+            var bookableResourcebooking = new MobileCRM.DynamicEntity("bookableresourcebooking", idGlobal);
+
+            var properties = bookableResourcebooking.properties;
+
+            var bkr = new MobileCRM.FetchXml.Entity("bookableresourcebooking");
+
+            bkr.addAttributes();
+            bkr.filter = new MobileCRM.FetchXml.Filter();
+
+            bkr.filter.where("bookableresourcebookingid", "eq", idGlobal);
+            var bookableResourceStartTimeActually;
+
+            var fetch = new MobileCRM.FetchXml.Fetch(bkr);
+            fetch.executeOffline("DynamicEntities", function(res) {
+                /// <param name='res' type='Array'>Array of results carrying resco_data field value.</param>
+                if (res.length > 0) {
+
+                    var props = res[0].properties;
+
+                    //compare with form starttime
+                    //if(starttime < props.starttime) {
+                    properties.starttime = starttime;
+                    //}
+
+                    //compare with form endtime
+                    //if(endtime > props.endtime) {
+                    properties.endtime = endtime;
+                    //}
+
+
+                    bookableResourcebooking.save(
+                        function(error) {
+                            if (error) {
+                                MobileCRM.bridge.alert("An error occurred onsave: " + error);
+
+                            } else {
+                                MobileCRM.bridge.alert("BRB zmeneny");
+                            }
+
+                        }
+
+                    );
+
+
+                }
+
+            }, MobileCRM.bridge.alert, null);
+
+
+            // bookableResourcebooking.save(
+            // 	function (error) {
+            // 		if (error)
+            // 			MobileCRM.bridge.alert("An error occurred onsave: " + error);
+
+
+            // 	}
+            // );
+
+
+        }
+
+        function CheckIfReiseEntryIsStored(id_, starttime, endtime) {
+            var report = new MobileCRM.FetchXml.Entity("msdyn_timeentry");
+
+            report.addAttributes();
+            report.filter = new MobileCRM.FetchXml.Filter();
+
+            report.filter.where("msdyn_bookableresourcebooking", "eq", id_);
+            //report.filter.where("msdyn_type", "eq", 192355001);
+
+            var tempEndtime = endtime;
+            var temp = starttime;
+            var fetch = new MobileCRM.FetchXml.Fetch(report);
+            fetch.executeOffline("DynamicEntities", function(res) {
+                /// <param name='res' type='Array'>Array of results carrying resco_data field value.</param>
+                if (res.length > 0) {
+                    var debugPoint = res;
+                    var testPoint = 0;
+
+
+                    for (var k = 0; k < res.length; k++) {
+
+                        if (res[k].properties.msdyn_start <= temp) {
+
+                            temp = res[k].properties.msdyn_start;
+                        }
+
+                        if (res[k].properties.msdyn_end >= tempEndtime) {
+
+                            tempEndtime = res[k].properties.msdyn_end;
+                        }
+
+                    }
+                    //MobileCRM.bridge.alert("found reise entry");
+                    updateBookableResourceBookingReise(id_, temp, tempEndtime);
+                } else if (res.length == 0) {
+                    //Übernehme die Änderunge beim ersten "Reise Eintrag"
+                    temp = starttime;
+                    tempEndtime = endtime;
+                    updateBookableResourceBookingReise(id_, temp, tempEndtime);
+                }
+            }, MobileCRM.bridge.alert, null);
+
+            // fetch.executeAsync(null) // "null" stands for default null result format
+            // .then(function (result) {
+            // 	// Promise was fulfilled and we obtained an array of DynamicEntities
+            // 		if (res.length > 0) {
+            // 			//reiseEntryStored = true;
+            // 			MobileCRM.bridge.alert("found reise entry");
+            // 	}
+            // 	else if(res.length == 0) {
+            // 		updateBookableResourceBookingReise(id_, starttime,endtime)
+            // 	}
+            // })
+            // .catch(function (err) {
+            // 	// Promise was rejected with error
+            // 	MobileCRM.bridge.alert("Error fetching accounts: " + err);
+            // });
+
+        }
+
+        function updateBookableResourceBooking(bookableResourceBookingId, starttime, endtime) {
+            var bookableResourcebooking = new MobileCRM.DynamicEntity("bookableresourcebooking", idGlobal);
+            var props = bookableResourcebooking.properties;
+            //Fetch actually bookableresourcestarttime
+
+            var bkr = new MobileCRM.FetchXml.Entity("bookableresourcebooking");
+
+            bkr.addAttributes();
+            bkr.filter = new MobileCRM.FetchXml.Filter();
+
+            bkr.filter.where("bookableresourcebookingid", "eq", idGlobal);
+            var bookableResourceStartTimeActually;
+
+            var fetch = new MobileCRM.FetchXml.Fetch(bkr);
+            fetch.executeOffline("DynamicEntities", function(res) {
+                /// <param name='res' type='Array'>Array of results carrying resco_data field value.</param>
+                if (res.length > 0) {
+
+                    bookableResourceStartTimeActually = res[0].properties.starttime;
+                    //  bookableResourceStartTimeActually = res[0][13]; // starttime
+                    debugger;
+                    props.msdyn_actualarrivaltime = starttime;
+                    props.endtime = endtime;
+
+                    //calculation in minutes
+                    var startTime = bookableResourceStartTimeActually;
+                    var endTime = endtime;
+
+                    if (startTime != null) {
+                        var difference = endTime.getTime() - startTime.getTime(); // This will give difference in milliseconds
+                        var resultInMinutes = Math.round(difference / 60000);
+
+                        props.duration = resultInMinutes;
+                    }
+
+                    bookableResourcebooking.save(
+                        function(error) {
+                            if (error)
+                                saveHandler.resumeSave("An error occurred onSave: " + error);
+                            else {
+                                saveHandler.resumeSave();
+                            }
+                            //MobileCRM.bridge.alert("done");
+                        }
+                    );
+
+
+                }
+
+            }, MobileCRM.bridge.alert, null);
+
+
+
+
+
+        }
+
+
+        function FetchAllTimeEntries(bookableResourceID, starttime, endtime) {
+
+            idGlobal = bookableResourceID;
+            var report = new MobileCRM.FetchXml.Entity("msdyn_timeentry");
+
+            report.addAttributes();
+            report.filter = new MobileCRM.FetchXml.Filter();
+
+            report.filter.where("msdyn_bookableresourcebooking", "eq", bookableResourceID);
+            report.filter.where("msdyn_type", "eq", 192350000);
+
+            var tempEndtime = endtime;
+            var fetch = new MobileCRM.FetchXml.Fetch(report);
+            fetch.execute("DynamicEntities", function(res) {
+                /// <param name='res' type='Array'>Array of results carrying resco_data field value.</param>
+                if (res.length > 0) {
+
+                    var debugPoint = res;
+                    var testPoint = 0;
+                    var temp = starttime;
+
+
+
+                    //Check all entries
+                    for (var k = 0; k < res.length; k++) {
+
+                        if (res[k].properties.msdyn_start <= temp) {
+
+                            temp = res[k].properties.msdyn_start;
+                        }
+
+                        if (res[k].properties.msdyn_end >= tempEndtime) {
+
+                            tempEndtime = res[k].properties.msdyn_end;
+                        }
+
+                    }
+
+
+                    updateBookableResourceBooking(bookableResourceBookingId, temp, tempEndtime);
+
+                    //Foreach get the min elemnt
+                } else if (res.length == 0) {
+                    temp = starttime;
+                    tempEndtime = endtime;
+                    updateBookableResourceBooking(bookableResourceBookingId, temp, tempEndtime);
+                }
+            }, MobileCRM.bridge.alert, null);
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>msdyn_workorder</EntityName>
+  <CamelCase>msdyn_workorder</CamelCase>
+  <SharedVariables>&lt;SharedVariables&gt;&lt;Variables&gt;&lt;/Variables&gt;&lt;/SharedVariables&gt;</SharedVariables>
+  <PrimaryCommands>custom_FollowUp|Cmd.RunFollowUp||custom_RemoteAssist|Cmd.RemoteAssist||custom_SendIoTCommand|Cmd.SendIoTCommand|</PrimaryCommands>
+  <SharedVariableNames/>
+  <ClassBinding>
+    <SerializedClassBinding name="#BillingAccount" label="BillingAccount" type="String"/>
+    <SerializedClassBinding name="#IsSignatureChange" label="IsSignatureChange" type="String"/>
+    <SerializedClassBinding name="#IsSignatureIsDirty" label="IsSignatureIsDirty" type="String"/>
+    <SerializedClassBinding name="#IsSignatureIsEmpty" label="IsSignatureIsEmpty" type="String"/>
+    <SerializedClassBinding name="#IsSignatureOutdate" label="IsSignatureOutdate" type="String"/>
+    <SerializedClassBinding name="#IsWasSyncAfterCreate" label="IsWasSyncAfterCreate" type="String"/>
+    <SerializedClassBinding name="#PriceList" label="PriceList" type="String"/>
+    <SerializedClassBinding name="#PrimaryIncident" label="PrimaryIncident" type="String"/>
+    <SerializedClassBinding name="#PrimaryIncidentType" label="PrimaryIncidentType" type="String"/>
+    <SerializedClassBinding name="#PropertiesCount" label="PropertiesCount" type="String"/>
+    <SerializedClassBinding name="#ServiceAccount" label="ServiceAccount" type="String"/>
+    <SerializedClassBinding name="#Signature" label="Signature" type="String"/>
+    <SerializedClassBinding name="#SubStatus" label="SubStatus" type="String"/>
+    <SerializedClassBinding name="#WorkOrderType" label="WorkOrderType" type="String"/>
+  </ClassBinding>
+  <EnabledWorkflows>OnChangeEnabled OnSaveEnabled OnCanExecuteCommand</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\General@2x.png" IsIconNameReadOnly="0">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_name"/>
+        <DetailItem SchemaName="msdyn_serviceaccount"/>
+        <DetailItem SchemaName="msdyn_substatus">
+          <LookupViews>&lt;extra&gt;&lt;filter entity="msdyn_workordersubstatus"&gt;&amp;lt;fetch version="1.0"&amp;gt;&amp;lt;entity name="msdyn_workordersubstatus"&amp;gt;&amp;lt;filter type="and"&amp;gt;&amp;lt;condition attribute="msdyn_systemstatus" operator="eq" value="{{msdyn_systemstatus}}" /&amp;gt;&amp;lt;/filter&amp;gt;&amp;lt;/entity&amp;gt;&amp;lt;/fetch&amp;gt;&lt;/filter&gt;&lt;/extra&gt;</LookupViews>
+        </DetailItem>
+        <DetailItem SchemaName="transactioncurrencyid"/>
+        <DetailItem separator="true" xsi:type="SeparatorDetailItem">
+          <IsConstant>true</IsConstant>
+        </DetailItem>
+        <DetailItem SchemaName="msdyn_taxable"/>
+        <DetailItem SchemaName="msdyn_taxcode"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab" NameModified="0" IconModified="0" EntityIconName="" IsIconNameReadOnly="0">
+      <Name>Time Entries List</Name>
+      <Binding SchemaName="msdyn_timeentry.msdyn_workorder"/>
+    </FormTab>
+    <FormTab xsi:type="IFrameTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\Web@2x.png" IsIconNameReadOnly="0">
+      <Name>Web</Name>
+      <Url>file://saveDirtyForm.html</Url>
+    </FormTab>
+    <FormTab xsi:type="DetailTab" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\Address@2x.png" IsIconNameReadOnly="0">
+      <Name>Address</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_address1"/>
+        <DetailItem SchemaName="msdyn_address2"/>
+        <DetailItem SchemaName="msdyn_address3"/>
+        <DetailItem SchemaName="msdyn_city"/>
+        <DetailItem SchemaName="msdyn_stateorprovince"/>
+        <DetailItem SchemaName="msdyn_postalcode"/>
+        <DetailItem SchemaName="msdyn_country"/>
+        <DetailItem SchemaName="msdyn_serviceterritory"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="MapTab" flexiHeight="1" NameModified="0" IconModified="0" EntityIconName="MobileCrm\Images.MonoTouch\Tabs\Map@2x.png" IsIconNameReadOnly="0">
+      <Name>Map</Name>
+      <CoordinatesBinding>msdyn_latitude;msdyn_longitude</CoordinatesBinding>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>
